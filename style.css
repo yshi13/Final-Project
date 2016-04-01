@@ -1,0 +1,171 @@
+body {
+  background-color: #E0F8F1;
+  padding-bottom: 40px;   
+}
+      
+.jumbotron {
+  background-image: url("bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 1500px 750px;
+  margin: 20px 0;
+  height: 500px;
+  text-align: center;
+}
+.container-narrow h1 {
+  font-size: 92px;
+  font-family: 'Lobster', Georgia, Times, serif;
+  line-height: 1;
+}
+.container-narrow p {
+  font-size: 27px;
+  font-family: 'Allan', Helvetica, Arial, sans-serif;
+  line-height: 3;
+}
+.container-narrow .btn-1 {
+  border: 2px solid black;
+  color: black;
+  border-radius: 0;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  padding: 4px 8px;
+}
+.container-narrow .btn-1:hover {
+  color: white;
+}
+.container-narrow .btn-2 {
+  border: 2px solid white;
+  color: white;
+  border-radius: 0;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  padding: 4px 8px;
+}
+.container-narrow .btn-2:hover {
+  color: black;
+}
+.modal-1 .modal-content {
+  border-radius: 2px;
+}
+.modal-1 .modal-content .modal-header-1 {
+  text-align: left;
+  font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  padding: 14px 28px;
+}
+.modal-1 .modal-content .modal-footer-1 {
+  text-align: center;
+  font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  padding: 25px 38px;
+} 
+.modal-1 .modal-content .modal-footer-1 button {
+  border: 1px solid black;
+  color: black;
+  border-radius: 0;
+  font-size: 21px;
+  padding: 4px 8px;
+}
+.modal-1 .modal-content .modal-footer-1.btn:hover {
+  color: white;
+  background-color: black;
+}
+
+.modal-1 .modal-content .modal-header-2 {
+  text-align: left;
+  font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  padding: 14px 28px;
+}
+.modal-1 .modal-content .modal-body {
+  text-align: left;
+  font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+  padding: 30px 30px;
+}
+.modal-1 .modal-content .modal-body .form-group {
+  width: 330px;
+  height: 40px;
+}
+
+.modal-1 .modal-content .modal-footer-2 {
+  text-align: center;
+  font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  padding: 25px 38px;
+} 
+.modal-1 .modal-content .modal-footer-2 button {
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+  border-radius: 0;
+  font-size: 21px;
+  padding: 4px 8px;
+}
+
+
+.modal-2 .modal-content {
+  border-radius: 2px;
+}
+.modal-2 .modal-content .modal-header-1 {
+  text-align: left;
+  font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  padding: 14px 28px;
+}
+.modal-2 .modal-content .modal-footer-1 {
+  text-align: center;
+  font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  padding: 25px 38px;
+} 
+.modal-2 .modal-content .modal-footer-1 button {
+  border: 1px solid black;
+  color: black;
+  border-radius: 0;
+  font-size: 21px;
+  padding: 4px 8px;
+}
+.modal-2 .modal-content .modal-footer-1.btn:hover {
+  color: white;
+  background-color: black;
+}
+
+.modal-2 .modal-content .modal-header-2 {
+  text-align: left;
+  font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  padding: 14px 28px;
+}
+.modal-2 .modal-content .modal-body {
+  text-align: left;
+  font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+  padding: 30px 30px;
+}
+.modal-2 .modal-content .modal-body .form-group {
+  width: 330px;
+  height: 40px;
+}
+
+.modal-2 .modal-content .modal-footer-2 {
+  text-align: center;
+  font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  padding: 25px 38px;
+} 
+.modal-2 .modal-content .modal-footer-2 button {
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+  border-radius: 0;
+  font-size: 21px;
+  padding: 4px 8px;
+}
+.row-footer {
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+
+
+
+
