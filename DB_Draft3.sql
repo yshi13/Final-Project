@@ -7,7 +7,15 @@ a foreign key constraint fails
 jlin4@serv42266[~/webdev/Project]% bash db.sh < DB_Draft3.sql
 ERROR 1217 (23000) at line 5: Cannot delete or update a parent row: 
 a foreign key constraint fails
+
+
+Drop tables in reverse order to accommodate for FK implementation!!!
+
+
+
 */
+
+
 
 
 DROP TABLE IF EXISTS UserTypes_T;
