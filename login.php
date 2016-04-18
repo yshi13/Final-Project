@@ -1,4 +1,25 @@
-<!--Employee login modal-->
+<?php
+	include_once('header.php');
+?>            
+	
+			<div class="jumbotron">
+				<div class="container-narrow">
+				  <br>
+				  &nbsp;
+				  <br>
+				  &nbsp;
+				  
+				  <h1><font size=10 style="font-family:'Lobster'"><strong>Wage  Guard</strong></font></h1>
+				  <p></p>
+				  <p><font size=5 style="font-family:'Allan'">/weyj gahrd/</font></p>
+				  <p></p>
+				  
+				  <a class="btn btn-large btn-1" style="margin-right:60px;">I am Employee</a>
+							  
+				  <a class="btn btn-large btn-2">I am NPO</a>
+				</div>
+			</div>
+			
 <?php
 // Back to PHP to perform the search if one has been submitted. Note
 // that $_POST['submit'] will be set only if you invoke this PHP code as
@@ -18,11 +39,11 @@ if (isset($_POST['submit'])) {
 	
 	// check to make sure we have an email
 	if (!$email) {
-		header("Location: login-modal.php");
+		header("Location: login.php");
 	}
 	
 	if (!$password) {
-		header("Location: login-modal.php");
+		header("Location: login.php");
 	}
 
 	// check if user is in the database
@@ -59,9 +80,8 @@ if (isset($_POST['submit'])) {
 }
 
 ?>
-			
-				<div class="modal fade" id="elogin" role="dialog">
-					<div class="modal-dialog modal-lg modal-1" style='padding-top: 120px'>
+            <div class="modal fade" id="elogin" role="dialog">
+					<div class="modal-dialog modal-lg modal-1">
 					
 						<!-- Modal content-->
 						<div class="modal-content">
@@ -110,66 +130,14 @@ if (isset($_POST['submit'])) {
 								</div>
 								</form>
 							</div>
+                            <script>
+                                $('#elogin').modal({backdrop: 'static', keyboard: false});
+                            </script>
 						</div>
 					</div>
-				</div>
-				
-				<!--NPO login modal-->
-				<div class="modal fade" id="nlogin" role="dialog">
-					<div class="modal-dialog modal-lg modal-2" style='padding-top: 120px'>
-					
-						<!-- Modal content-->
-						<div class="modal-content">
-							<div class="row">
-							<div class="col-sm-6">
-								<div class="modal-header-1">
-									<h3><strong><font size=6 style="font-family:'Dancing Script'">Introduction of NPO</font></strong></h3>
-									<br>
-									<p>"Wage theft is the illegal withholding of wages or the denial of benefits that are rightfully owed to an employee.
-									Wage theft can be conducted through various means such as: failure to pay overtime, minimum wage violations,
-									employee misclassification, illegal deductions in pay, working off the clock, or not being paid at all."</p>
-									
-								</div>
-								<div class="modal-footer-1">
-									<a href="esignup.php"><button type="button" class="btn btn-default"><strong>JOIN US</strong></button></a>
-								</div>
-								
-							</div>
-							
-							
-							<div class="col-sm-6">
-								<div class="modal-header-2">
-									<button type="button" class="close" data-dismiss="modal">&times;</button>
-									<h3><strong><font size=6 style="font-family:'Dancing Script'">Login to Wage Guard</font></strong></h3>
-								</div>
-								<div class="modal-body">
-									
-										<div class="form-group">
-										  <input type="email" class="form-control" name="email" placeholder="Email Address">
-										</div>
-										<div class="form-group">
-										  <input type="text" class="form-control" name="password" placeholder="Password">
-										</div>
-										<div class="checkbox">
-										  <label><input type="checkbox" value="" checked>Remember me</label>
-										</div>
-										<div class="row" style="text-align: right; margin-right:40px;">
-										  <a href=#>Password help</a>	
-										</div>
-									
-								</div>	
-								<div class="modal-footer-2">
-									<button type="button" class="btn btn-default" style="margin-right:20px; margin-top:30px;"><strong>LOG IN</strong></button>
-								</div>
-							</div>
-							</div>	
-						</div>
-					</div>
-				</div>
-				<script>
-				$(document).ready(function(){
-					$("#myBtn").click(function(){
-						$("#myModal").modal();
-					});
-				});
-				</script>
+			</div>
+                
+			
+<?php
+	include_once('footer.php');
+?>

@@ -13,7 +13,7 @@ body {
   text-align: center;
 }
 .container-narrow h1 {
-  font-size: 92px;
+  font-size: 70px;
   font-family: 'Lobster', Georgia, Times, serif;
   line-height: 1;
 }
@@ -51,22 +51,23 @@ body {
   text-align: left;
   font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
   font-size: 21px;
-  padding: 14px 28px;
+  padding: 12px 28px;
+  padding-left: 50px;
 }
 .modal-1 .modal-content .modal-footer-1 {
   text-align: center;
   font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
   font-size: 21px;
-  padding: 25px 38px;
+  padding: 25px 38px; 
 } 
-.modal-1 .modal-content .modal-footer-1 button {
+.modal-1 .modal-content .modal-footer-1 .btn-default {
   border: 1px solid black;
   color: black;
   border-radius: 0;
   font-size: 21px;
   padding: 4px 8px;
 }
-.modal-1 .modal-content .modal-footer-1.btn:hover {
+.modal-1 .modal-content .modal-footer-1 .btn-default:hover {
   color: white;
   background-color: black;
 }
@@ -92,14 +93,20 @@ body {
   font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
   font-size: 21px;
   padding: 25px 38px;
+  padding-top: 50px;
 } 
-.modal-1 .modal-content .modal-footer-2 button {
+.modal-1 .modal-content .modal-footer-2 .btn-default {
   background-color: black;
   border: 1px solid black;
   color: white;
   border-radius: 0;
   font-size: 21px;
   padding: 4px 8px;
+}
+
+.modal-1 .modal-content .modal-footer-2 .btn-default:hover {
+  background-color: white;
+  color: black;
 }
 
 
@@ -111,6 +118,7 @@ body {
   font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
   font-size: 21px;
   padding: 14px 28px;
+  padding-left: 50px;
 }
 .modal-2 .modal-content .modal-footer-1 {
   text-align: center;
@@ -118,14 +126,14 @@ body {
   font-size: 21px;
   padding: 25px 38px;
 } 
-.modal-2 .modal-content .modal-footer-1 button {
+.modal-2 .modal-content .modal-footer-1 .btn-default {
   border: 1px solid black;
   color: black;
   border-radius: 0;
   font-size: 21px;
   padding: 4px 8px;
 }
-.modal-2 .modal-content .modal-footer-1.btn:hover {
+.modal-2 .modal-content .modal-footer-1 .btn-default:hover {
   color: white;
   background-color: black;
 }
@@ -151,8 +159,9 @@ body {
   font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
   font-size: 21px;
   padding: 25px 38px;
+  padding-top: 50px;
 } 
-.modal-2 .modal-content .modal-footer-2 button {
+.modal-2 .modal-content .modal-footer-2 .btn-default {
   background-color: black;
   border: 1px solid black;
   color: white;
@@ -160,6 +169,12 @@ body {
   font-size: 21px;
   padding: 4px 8px;
 }
+
+.modal-2 .modal-content .modal-footer-2 .btn-default:hover {
+  background-color: white;
+  color: black;
+}
+
 .row-footer {
   font-family: 'Cabin', Helvetica, Arial, sans-serif;
   font-size: 14px;

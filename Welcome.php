@@ -9,7 +9,7 @@
 				  <br>
 				  &nbsp;
 				  
-				  <h1><font size=12 style="font-family:'Lobster'">Wage  Guard</font></h1>
+				  <h1><font size=10 style="font-family:'Lobster'"><strong>Wage  Guard</strong></font></h1>
 				  <p></p>
 				  <p><font size=5 style="font-family:'Allan'">/weyj gahrd/</font></p>
 				  <p></p>
