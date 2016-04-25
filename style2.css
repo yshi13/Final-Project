@@ -54,7 +54,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after{
 }
 
 div.bhoechie-tab-content{
-  height: 770px;
+  height: auto;
   border-left: 50px solid white;
   border-radius: 3px;
   border-top-left-radius: 0;
@@ -62,6 +62,7 @@ div.bhoechie-tab-content{
   /* border: 1px solid #eeeeee; */
   padding-left: 20px;
   padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 div.bhoechie-tab div.bhoechie-tab-content:not(.active){

@@ -1,3 +1,9 @@
+<?php
+	include_once "config.php";
+	include_once "utils.php";
+	include_once('hashutil.php');
+?>	
+	
 <html>
 	<head>
 		<meta charset="utf-8">

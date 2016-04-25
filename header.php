@@ -1,3 +1,8 @@
+<?php
+	include_once "config.php";
+	include_once "utils.php";
+?>
+
 <html>
 	<head>
 		

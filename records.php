@@ -40,7 +40,7 @@
 							<div class="container" style="text-align: left">
 								<div class="jumbotron" style="background-color: #eedee3; border-radius: 3px; width: 700px; margin-top: 30px">
 									<a href="hours.php"><img src="hour.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-left: 18px; margin-right: 83px"></a>
-									<a href="records.php"><img src="record.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
+									<a href=""><img src="record.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
 									<a href=""><img src="report.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
 									<a href=""><img src="money.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black"></a>
 									<br><p></p>
@@ -49,27 +49,45 @@
 									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-right: 77px">Report case</font>
 									<font style="font-size: 17px; font-family:'Ubuntu'; color: black">Checks</font>
 								</div>
-								<div class="jumbotron" style="background-color: #dfd3d7; border-radius: 3px; width: 700px; height: 440px; margin-top: 30px; text-align: center">
-									<div class="alert alert-danger" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #a95050"><strong>You have No Wage Theft alert.</strong></font>
-										</a>
-									</div>
-									<div class="alert alert-success" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #459a46"><strong>You have worked 233 Hours in 2016.</strong></font>
-										</a>
-									</div>
-									<div class="alert alert-info" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #42a0e7"><strong>You recently entered 3 paychecks.</strong></font>
-										</a>
-									</div>
-									<div class="alert alert-warning" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #a4a553"><strong>New policy updated.</strong></font>
-										</a>
-									</div>									
+								<div class="jumbotron" style="background-color: #ebeed6; border-radius: 3px; width: 700px; height: auto; margin-top: 30px; text-align: center; padding: 35px">
+									<a href="dashboard.php"><button type="button" class="btn btn-default" name="submit" style="font-family:'Raleway'; font-size:12px; margin:0; margin-right:600px"><strong>Back</strong></button></a>
+									<br><p></p>
+									<table class="table table-striped sortable" style="font-family:'Raleway'; font-weight: 400">
+                                        <thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Hours</th>
+                                                <th>Wage</th>                                           
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                           <tr>
+                                              <td>2016-1-5</td>
+                                              <td>10:00am - 3:00pm</td>
+                                              <td>$75</td>
+                                           </tr>
+                                           <tr>
+                                              <td>2016-3-5</td>
+                                              <td>8:00am - 8:00pm</td>
+                                              <td>$180</td>
+                                           </tr>
+                                           <tr>
+                                              <td>2015-12-25</td>
+                                              <td>2:00pm - 10:00pm</td>
+                                              <td>$120</td>
+                                           </tr>
+                                           <tr>
+                                              <td>2016-4-20</td>
+                                              <td>6:00pm - 12:00am</td>
+                                              <td>$90</td>
+                                           </tr>
+                                           <tr>
+                                              <td>xxxx-xx-xx</td>
+                                              <td>xx:xx - xx:xx</td>
+                                              <td>$xxx</td>
+                                           </tr>
+                                        </tbody>
+                                     </table>
 								</div>
 							</div>							
 						</div>
@@ -78,7 +96,7 @@
 							<div class="container" style="text-align: left">
 								<div class="jumbotron" style="background-color: #eedee3; border-radius: 3px; width: 700px; margin-top: 30px">
 									<a href="hours.php"><img src="hour.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-left: 18px; margin-right: 83px"></a>
-									<a href="records.php"><img src="record.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
+									<a href=""><img src="record.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
 									<a href=""><img src="report.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
 									<a href=""><img src="money.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black"></a>
 									<br><p></p>
@@ -87,26 +105,9 @@
 									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-right: 77px">Report case</font>
 									<font style="font-size: 17px; font-family:'Ubuntu'; color: black">Checks</font>
 								</div>
-								<div class="jumbotron" style="background-color: #dfd3d7; border-radius: 3px; width: 700px; height: 440px; margin-top: 30px; text-align: center">
-									<div class="alert alert-danger" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #a95050"><strong>You have 22 Wage Theft alert.</strong></font>
-										</a>
-									</div>
-									<div class="alert alert-success" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #459a46"><strong>You have worked 40 Hours in this month.</strong></font>
-										</a>
-									</div>
-									<div class="alert alert-info" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #42a0e7"><strong>You recently entered no paychecks.</strong></font>
-										</a>
-									</div>
-									<div class="alert alert-warning" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #a4a553"><strong>You have No Wage Theft alert.</strong></font>
-										</a>
+								<div class="jumbotron" style="background-color: #dfd3d7; border-radius: 3px; width: 700px; height: auto; margin-top: 30px; text-align: center">
+									<div style="width:100%; max-width:900px; display:inline-block;">
+										<div class="monthly" id="mycalendar"></div>
 									</div>									
 								</div>
 							</div>
@@ -117,7 +118,7 @@
 							<div class="container" style="text-align: left">
 								<div class="jumbotron" style="background-color: #eedee3; border-radius: 3px; width: 700px; margin-top: 30px">
 									<a href="hours.php"><img src="hour.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-left: 18px; margin-right: 83px"></a>
-									<a href="records.php"><img src="record.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
+									<a href=""><img src="record.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
 									<a href=""><img src="report.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
 									<a href=""><img src="money.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black"></a>
 									<br><p></p>
@@ -126,37 +127,19 @@
 									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-right: 77px">Report case</font>
 									<font style="font-size: 17px; font-family:'Ubuntu'; color: black">Checks</font>
 								</div>
-								<div class="jumbotron" style="background-color: #dfd3d7; border-radius: 3px; width: 700px; height: 440px; margin-top: 30px; text-align: center">
-									<div class="alert alert-danger" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #a95050"><strong>This is for testing.</strong></font>
-										</a>
-									</div>
-									<div class="alert alert-success" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #459a46"><strong>This is for testing.</strong></font>
-										</a>
-									</div>
-									<div class="alert alert-info" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #42a0e7"><strong>This is for testing.</strong></font>
-										</a>
-									</div>
-									<div class="alert alert-warning" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #a4a553"><strong>BYE, KOBE 24.</strong></font>
-										</a>
+								<div class="jumbotron" style="background-color: #dfd3d7; border-radius: 3px; width: 700px; height: auto; margin-top: 30px; text-align: center">
+									<div style="width:100%; max-width:900px; display:inline-block;">
+										<div class="monthly" id="mycalendar"></div>
 									</div>									
 								</div>
-							</div>
+							</div>	
 						</div>
-						
 					</div>
 					
 				</div>
 			</div>
 		</div>
-		<!-- Modal for adding jobs-->
+		
 		<div class="modal fade" id="elogin" role="dialog">
 			<div class="modal-dialog modal-lg" style='padding-top: 120px'>							
 				<div class="modal-content" style="border-radius: 2px; padding-bottom: 50px">
@@ -213,5 +196,34 @@
 					<a href="privacy.html"><strong>Privacy Policy</strong></a>
 			</div>
 		</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/monthly.js"></script>
+<script type="text/javascript">
+	$(window).load( function() {
+
+		$('#mycalendar').monthly({
+			mode: 'event',
+			xmlUrl: 'events.xml'
+		});
+
+		$('#mycalendar2').monthly({
+			mode: 'picker',
+			target: '#mytarget',
+			setWidth: '250px',
+			startHidden: true,
+			showTrigger: '#mytarget',
+			stylePast: true,
+			disablePast: true
+		});
+
+	switch(window.location.protocol) {
+	case 'http:':
+	case 'https:':
+	// running on a server, should be good.
+	break;
+	}
+
+	});
+</script>
 	</body>
 </html>

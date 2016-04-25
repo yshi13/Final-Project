@@ -34,3 +34,10 @@ body {
 .row-3 .btn-default:hover {
     color: black;
 }
+
+.modal-lg .modal-content {
+  border-radius: 2px;
+  font-family:'Ubuntu', Helvetica, Arial, sans-serif;
+  color: #6c6c76;
+  margin-top:400px;
+}

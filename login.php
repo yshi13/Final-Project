@@ -1,25 +1,7 @@
 <?php
 	include_once('header.php');
-?>            
-	
-			<div class="jumbotron">
-				<div class="container-narrow">
-				  <br>
-				  &nbsp;
-				  <br>
-				  &nbsp;
-				  
-				  <h1><font size=10 style="font-family:'Lobster'"><strong>Wage  Guard</strong></font></h1>
-				  <p></p>
-				  <p><font size=5 style="font-family:'Allan'">/weyj gahrd/</font></p>
-				  <p></p>
-				  
-				  <a class="btn btn-large btn-1" style="margin-right:60px;">I am Employee</a>
-							  
-				  <a class="btn btn-large btn-2">I am NPO</a>
-				</div>
-			</div>
-			
+?>
+
 <?php
 // Back to PHP to perform the search if one has been submitted. Note
 // that $_POST['submit'] will be set only if you invoke this PHP code as
@@ -27,7 +9,6 @@
 // on the form we just displayed above.
 
 if (isset($_POST['submit'])) {
-	
 	
 //	echo '<p>we are processing form data</p>';
 //	print_r($_POST);
@@ -80,6 +61,26 @@ if (isset($_POST['submit'])) {
 }
 
 ?>
+
+			<div class="jumbotron">
+				<div class="container-narrow">
+				  <br>
+				  &nbsp;
+				  <br>
+				  &nbsp;
+				  
+				  <h1><font size=10 style="font-family:'Lobster'"><strong>Wage  Guard</strong></font></h1>
+				  <p></p>
+				  <p><font size=5 style="font-family:'Allan'">/weyj gahrd/</font></p>
+				  <p></p>
+				  
+				  <a class="btn btn-large btn-1" style="margin-right:60px;">I am Employee</a>
+							  
+				  <a class="btn btn-large btn-2">I am NPO</a>
+				</div>
+			</div>
+			
+
             <div class="modal fade" id="elogin" role="dialog">
 					<div class="modal-dialog modal-lg modal-1">
 					
@@ -104,7 +105,6 @@ if (isset($_POST['submit'])) {
 								<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 								<div class="col-sm-6">
 									<div class="modal-header-2">
-										<button type="button" class="close" data-dismiss="modal">&times;</button>
 										<h3><strong><font size=6 style="font-family:'Dancing Script'">Login to Wage Guard</font></strong></h3>
 									</div>
 									<div class="modal-body">

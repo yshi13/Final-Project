@@ -1,3 +1,7 @@
+<?php
+	include_once "config.php";
+	include_once "utils.php";
+?>
 <!--Employee login modal-->
 <?php
 // Back to PHP to perform the search if one has been submitted. Note
@@ -6,7 +10,6 @@
 // on the form we just displayed above.
 
 if (isset($_POST['submit'])) {
-	
 	
 //	echo '<p>we are processing form data</p>';
 //	print_r($_POST);
@@ -18,11 +21,11 @@ if (isset($_POST['submit'])) {
 	
 	// check to make sure we have an email
 	if (!$email) {
-		header("Location: login-modal.php");
+		header("Location: Welcome.php");
 	}
 	
 	if (!$password) {
-		header("Location: login-modal.php");
+		header("Location: Welcome.php");
 	}
 
 	// check if user is in the database

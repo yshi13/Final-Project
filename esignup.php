@@ -1,11 +1,8 @@
 <?php
-	include_once "config.php";
-	include_once "utils.php";
-	include_once('hashutil.php');
 	include_once('header1.php');
 ?>
 			
-<!-- Start main content --> 
+
 		<div class="container">	
 			<title>
 				<?php echo "Register - " . $Title; ?>
@@ -15,6 +12,28 @@
 			<h1><font size=6 style="font-family:'Ubuntu'; color: white">Create an account - Employee</font></h1>
 			<br>
 			&nbsp;
+			
+			<!--
+			<div class='modal fade' id='myModal'>
+				<div class='modal-dialog modal-lg' style='padding-top: 240px'>
+					<div class='modal-content' style='text-align: center; border-radius: 2px'>
+						<div class='modal-body'>
+							<br><font size=5 style="font-family:'Ubuntu'; color: #6c6c76; margin-top:400px"><strong><?php echo "The user " . $email . " was added to the database"; ?></strong></font>
+						</div>
+						<br><br>
+						<a href='login.php'><button type='button' class='btn btn-default' style="margin-right: 20px; margin-bottom:30px; border: 1px solid black; color: black;
+						border-radius: 0; font-size: 21px; padding: 4px 8px"><strong>LOG IN</strong></button></a>
+						<a href='esignup.php'><button type='button' class='btn btn-default' style="margin-left: 20px; margin-bottom:30px; border: 1px solid black; color: black;
+						border-radius: 0; font-size: 21px; padding: 4px 8px"><strong>SIGN UP</strong></button></a>
+						<script>
+						$('#myModal').modal({backdrop: 'static', keyboard: false});
+						</script>
+					</div>
+				</div>
+			</div>
+			-->
+			
+			
 <?php
 // Back to PHP to perform the search if one has been submitted. Note
 // that $_POST['submit'] will be set only if you invoke this PHP code as
@@ -170,6 +189,47 @@ if (isset($_POST['submit'])) {
 					<br>
 					&nbsp;
 					<HR color=white width="100%" size=10px>
+					<br>
+					&nbsp;
+					<div class="row-1">
+						<br>
+						&nbsp;
+						<font size=5 style="font-family:'Ubuntu'">You can add your first job here !</font>
+					</div>
+					<br>
+					&nbsp;
+					<div class="row" style="font-family:'Raleway'; color: black; text-align: center">
+						
+						<div class="dropdown">
+							<font size=4><strong>Company :</strong></font>
+							<button class="btn btn-default dropdown-toggle" type="button"
+							id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+							style="margin: 10px 10px">
+								<strong>Select company</strong>
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="margin-left: 330px">
+							  <li><a href="#">Company 1</a></li>
+							  <li><a href="#">Company 2</a></li>
+							  <li><a href="#">Company 3</a></li>
+							  <li><a href="#">Company 4</a></li>
+							</ul>
+							
+							<font size=4 style="margin-left: 170px"><strong>Job Title :</strong></font>
+							<button class="btn btn-default dropdown-toggle" type="button"
+							id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false"
+							style="margin: 10px 10px">
+								<strong>Select Job Title</strong>
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" aria-labelledby="dropdownMenu2" style="margin-left: 780px">
+							  <li><a href="#">Job 1</a></li>
+							  <li><a href="#">Job 2</a></li>
+							  <li><a href="#">Job 3</a></li>
+							  <li><a href="#">Job 4</a></li>
+							</ul>							
+						</div>
+					</div>
 					<br>
 					&nbsp;
 					<div class="progress center-block progress-striped active" style="text-align: center; width: 70%">
