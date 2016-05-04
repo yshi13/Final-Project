@@ -1,16 +1,21 @@
 <?php
 // check if user logged in, if not, kick them to login.php
 	session_start();
-	if(!isset($_SESSION['eemail'])) {
+	if(!isset($_SESSION['userEmail'])) {
 		// if this is not set, it means they are not logged in
 		header("Location: Welcome.php");
 	}
 
-?>
-
-<?php
 	include_once "config.php";
 	include_once "utils.php";
+	
+	// determine ID of current user, based on session email
+	$db = connectDB($DBHost,$DBUser,$DBPasswd,$DBName);
+	$userEmail = $_SESSION['userEmail'];
+	$userID = nextTuple(queryDB("SELECT UserID FROM Users_T WHERE UserEmail='$userEmail'", $db))['UserID'];
+	
+	// determine first name of current user for greeting in header
+	$userFirstName = nextTuple(queryDB("SELECT UserFirstName FROM Users_T WHERE UserID=$userID", $db))['UserFirstName'];
 ?>
 	
 <html>
@@ -36,7 +41,7 @@
 			<div class="col-sm-10 col-xs-12 menu" width=100%>
 				<br>
 				<a href="dashboard.php" style="margin-left: 80px; margin-right: 30px"><img alt="avatar" src="avatar.png" width=60 height=60></a>
-				<font size=2 style="font-family:'Raleway'; color: #6c6c76"><strong>Hello Joe!</strong></font>
+				<font size=2 style="font-family:'Raleway'; color: #6c6c76"><strong>Hello, <?php echo $userFirstName ?>!</strong></font>
 				<a href="logout.php" style="margin-left: 50px"><font size=4 style="font-family:'Raleway'; color: #6c6c76"><strong>Logout </strong></font></a>
 				<a href="#" style="margin-left: 30px"><font size=4 style="font-family:'Raleway'; color: #6c6c76"><strong>Notification </strong></font></a>
 				<span class="glyphicon glyphicon-envelope"></span>
