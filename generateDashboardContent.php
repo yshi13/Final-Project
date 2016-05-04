@@ -29,10 +29,11 @@ Contents:
 	$userTypeID = nextTuple(queryDB("SELECT UserTypeID FROM Users_T WHERE UserEmail='$userEmail'", $db))['UserTypeID'];
 	
 	// Feedback
+	/*
 	echo 'dev: User Information <br>';
 	echo 'User ID: ' . $userID . '<br>';
 	echo 'User Type ID: ' . $userTypeID . '<br>';
-	echo 'Job Count: ' . $numJobs . '<br>';
+	echo 'Job Count: ' . $numJobs . '<br>';*/
 	
 	// (*1.0.0) Generate admin content
 	if ($userTypeID == 0){
@@ -92,6 +93,7 @@ Contents:
 			};
 			
 			// start HTML
+			
 			echo "<div class='col-xs-11 bhoechie-tab-container'>\n";
 			
 			// menu bar start
@@ -130,12 +132,13 @@ Contents:
 			// this loop generates primary content for each menu tab
 			foreach($userJobs as $key => $val){
 				
-				// activate top-most (0-indexed) tab content
+				// activate top-most tab content
 				if ($key == 0){
 					
-					// HTML: generate toolbar
 					echo "\t\t\t<div class='bhoechie-tab-content active'>\n";
 					echo "\t\t\t\t<div class='container' style='text-align: left'>\n";
+					
+					// HTML: generate toolbar
 					echo "\t\t\t\t\t<div class='jumbotron' style='background-color: #eedee3; border-radius: 3px; width: 700px; margin-top: 30px'>\n";
 					echo "\t\t\t\t\t\t<a href='hours.php'><img src='hour.png' width=70 height=70 style='border-radius: 3px; border: 2px solid black; margin-left: 18px; margin-right: 83px'></a>\n";
 					echo "\t\t\t\t\t\t<a href='records.php'><img src='record.png' width=70 height=70 style='border-radius: 3px; border: 2px solid black; margin-right: 83px'></a>\n";
@@ -159,12 +162,17 @@ Contents:
 					echo "\t\t\t\t\t\t</div>\n";
 					
 					echo "\t\t\t\t\t</div>\n";
+					echo "\t\t\t\t</div>\n";
+					echo "\t\t\t</div>\n";
+					
 					
 				// generate content for other tabs
 				} else {
-					// HTML: generate toolbar
+					
 					echo "\t\t\t<div class='bhoechie-tab-content'>\n";
 					echo "\t\t\t\t<div class='container' style='text-align: left'>\n";
+					
+					// HTML: generate toolbar
 					echo "\t\t\t\t\t<div class='jumbotron' style='background-color: #eedee3; border-radius: 3px; width: 700px; margin-top: 30px'>\n";
 					echo "\t\t\t\t\t\t<a href='hours.php'><img src='hour.png' width=70 height=70 style='border-radius: 3px; border: 2px solid black; margin-left: 18px; margin-right: 83px'></a>\n";
 					echo "\t\t\t\t\t\t<a href='records.php'><img src='record.png' width=70 height=70 style='border-radius: 3px; border: 2px solid black; margin-right: 83px'></a>\n";
@@ -183,14 +191,22 @@ Contents:
 					
 					// HTML: sample alert
 					echo "\t\t\t\t\t\t\t<a href='#' class='alert-link'>\n";
-					echo "\t\t\t\t\t\t\t\t<font style='font-size: 25px; font-family:Raleway; color: #a95050'><strong>You have 22 Wage Theft alerts.</strong></font>\n";
+					echo "\t\t\t\t\t\t\t\t<font style='font-size: 25px; font-family:Raleway; color: #a95050'><strong>You have 23 Wage Theft alerts.</strong></font>\n";
 					echo "\t\t\t\t\t\t\t</a>\n";
 					echo "\t\t\t\t\t\t</div>\n";
 					
 					echo "\t\t\t\t\t</div>\n";
+					echo "\t\t\t\t</div>\n";
+					echo "\t\t\t</div>\n";
 				};
 			};
 			
+			// close div for tabs, primary content
+			echo "\t\t</div>\n";
+			echo "\t</div>\n";
+			
+			echo "</div>\n";
+			// end of primary content
 		};
 	};
 ?>
