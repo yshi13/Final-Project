@@ -1,8 +1,21 @@
+<!-- 
+Need to implement:
+-DOB formatting
+
+Optional:
+-Min password length
+
+
+-->
+
 <?php
+	include_once('config.php');
+	include_once('utils.php');
+	include_once('hashutil.php');
 	include_once('header1.php');
 ?>
 			
-
+<!-- Start main content --> 
 		<div class="container">	
 			<title>
 				<?php echo "Register - " . $Title; ?>
@@ -32,23 +45,27 @@
 				</div>
 			</div>
 			-->
-			
-			
 <?php
+
 // Back to PHP to perform the search if one has been submitted. Note
 // that $_POST['submit'] will be set only if you invoke this PHP code as
 // the result of a POST action, presumably from having pressed Submit
 // on the form we just displayed above.
+
 if (isset($_POST['submit'])) {
 //	echo '<p>we are processing form data</p>';
 //	print_r($_POST);
 
 	// get data from the input fields
-	$fname = $_POST['fname'];
-	$lname = $_POST['lname'];
-	$email = $_POST['email'];
+	$fname = $_POST['UserFirstName'];
+	$mname = $_POST['userMiddleInitial'];
+	$lname = $_POST['UserLastName'];
+	$userDOB = $_POST['userDOB'];
+	$email = $_POST['UserEmail'];
 	$password1 = $_POST['password1'];
 	$password2 = $_POST['password2'];
+	$phone = preg_replace('/\D+/', '', $_POST['phone']);
+	$gender = $_POST['gender'];
 	
 	// check to make sure we have an email
 	if (!$fname) {
@@ -68,11 +85,11 @@ if (isset($_POST['submit'])) {
 	}
 
 	if (!$password2) {
-		punt("Please enter your password twice.");
+		punt("Please enter your password a second time.");
 	}
 	
 	if ($password1 != $password2) {
-		punt("Your two passwords are not the same.");
+		punt("The two passwords entered do not match.");
 	}
 
 	// check if email already in database
@@ -80,7 +97,7 @@ if (isset($_POST['submit'])) {
 	$db = connectDB($DBHost,$DBUser,$DBPasswd,$DBName);
 	
 	// set up my query
-	$query = "SELECT email FROM Users WHERE email='$email';";
+	$query = "SELECT UserEmail, UserPassword FROM Users_T WHERE UserEmail='$email';";
 	
 	// run the query
 	$result = queryDB($query, $db);
@@ -94,12 +111,14 @@ if (isset($_POST['submit'])) {
 	$hashedPass = crypt($password1, getSalt());
 	
 	// set up my query
-	$query = "INSERT INTO Users(fname, lname, email, hashedPass) VALUES ('$fname', '$lname', '$email', '$hashedPass');";
+	$query = "INSERT INTO Users_T(UserFirstName, UserMiddleInitial, UserLastName, UserDOB, UserGender, UserEmail, UserPhoneNumber, UserPassword, UserTypeID) VALUES ('$fname', '$mname', '$lname', '$userDOB', '$gender', '$email', '$phone', '$hashedPass', 2);";
 	
 	// run the query
 	$result = queryDB($query, $db);
 	
-	// tell users that we added the player to the database
+
+	
+	// tell users that we added the user to the database
 	echo "<div class='modal fade' id='myModal'>\n";
 	echo "<div class='modal-dialog modal-lg' style='padding-top: 240px'>\n";
 	echo "<div class='modal-content' style='text-align: center; border-radius: 2px'>\n";
@@ -131,25 +150,25 @@ if (isset($_POST['submit'])) {
 						<div class="col-sm-6 col-xs-12">
 													
 								<div class="form-group">
-									<label for="fname">First Name <font style="color: red">*</font>
-									<input type="text" class="form-control" name="fname" size=50 maxsize=128 /></label>
+									<label for="UserFirstName">First Name <font style="color: red">*</font>
+									<input type="text" class="form-control" name="UserFirstName" size=50 maxsize=128 /></label>
 								</div>
 							
 								<div class="form-group">
-									<label for="lname">Last Name <font style="color: red">*</font>
-									<input type="text" class="form-control" name="lname" size=50 maxsize=128 /></label>
+									<label for="UserLastName">Last Name <font style="color: red">*</font>
+									<input type="text" class="form-control" name="UserLastName" size=50 maxsize=128 /></label>
 								</div>
 							
 								<div class="form-group">
-									<label for="email">Email Address <font style="color: red">*</font>
-									<input type="email" class="form-control" name="email" size=50 maxsize=128 /></label>
+									<label for="UserEmail">Email Address <font style="color: red">*</font>
+									<input type="email" class="form-control" name="UserEmail" size=50 maxsize=128 /></label>
 								</div>
 								
 								<div class="form-group">
 									<label class="radio-inline"> 
-									<input type="radio" name="gender" value="female"> Female</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<input type="radio" name="gender" value="Female">Female</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									<label class="radio-inline">
-									<input type="radio" name="gender" value="male"> Male</label>
+									<input type="radio" name="gender" value="Male">Male</label>
 								</div>						
 										
 						</div>
@@ -157,13 +176,13 @@ if (isset($_POST['submit'])) {
 						<div class="col-sm-6 col-xs-12">
 										
 								<div class="form-group">
-									<label for="MI">M.I.
-									<input type="text" class="form-control" name="MI" size=50 maxsize=128 /></label>
+									<label for="userMiddleInitial">Middle Initial
+									<input type="text" class="form-control" name="userMiddleInitial" size=50 maxsize=128 /></label>
 								</div>
 							
 								<div class="form-group">
 									<div class='input-group date' id='datetimepicker1'>
-										<label for="date">Date of Birth
+										<label for="userDOB">Date of Birth
 										<input type='text' class="form-control" size=20 maxsize=128 />
 										<span class="input-group-addon">
 											<span class="glyphicon glyphicon-calendar"></span>
@@ -178,7 +197,7 @@ if (isset($_POST['submit'])) {
 								</script>
 							
 								<div class="form-group">
-									<label for="phone">Phone <font style="color: red">*</font>
+									<label for="phone">Phone <!--<font style="color: red">*--></font>
 									<input type="tel" class="form-control" name="phone" size=50 maxsize=128 /></label>
 								</div>												
 							
@@ -191,7 +210,8 @@ if (isset($_POST['submit'])) {
 					<HR color=white width="100%" size=10px>
 					<br>
 					&nbsp;
-					<div class="row-1">
+					
+										<div class="row-1">
 						<br>
 						&nbsp;
 						<font size=5 style="font-family:'Ubuntu'">You can add your first job here !</font>
@@ -199,7 +219,8 @@ if (isset($_POST['submit'])) {
 					<br>
 					&nbsp;
 					
-					
+					<!-- temp: pick job from thing; need to learn AJAX -->
+					<!--
 					<div class="row" style="font-family:'Raleway'; color: black; text-align: center">
 						
 						<div class="dropdown">
@@ -233,7 +254,7 @@ if (isset($_POST['submit'])) {
 						</div>
 					</div>
 					<br>
-					&nbsp;
+					&nbsp;-->
 					
 					<!-- progress bar -->
 					<div class="progress center-block progress-striped active" style="text-align: center; width: 70%">

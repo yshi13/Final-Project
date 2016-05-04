@@ -15,7 +15,12 @@
 			});
 		</script>
 		<div class="container">
+		
 			<div class="row">
+			
+				<!-- this PHP function generates content for dashboard -->
+				<?php include_once('generateDashboardContent.php'); ?>
+				
 				<div class="col-xs-11 bhoechie-tab-container">
 					
 					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 bhoechie-tab-menu">
