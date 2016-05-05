@@ -1,10 +1,6 @@
 <?php
 	include_once('header2.php');
 ?>
-
-        <link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-        
 		<div class="row">
 		<script>
 			$(document).ready(function() {
@@ -53,22 +49,45 @@
 									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-right: 77px">Report case</font>
 									<font style="font-size: 17px; font-family:'Ubuntu'; color: black">Checks</font>
 								</div>
-								<div class="jumbotron" style="background-color: #e0ecf0; border-radius: 3px; width: 700px; height: auto; margin-top: 30px; text-align: left; padding: 35px">
+								<div class="jumbotron" style="background-color: #ebeed6; border-radius: 3px; width: 700px; height: auto; margin-top: 30px; text-align: center; padding: 35px">
 									<a href="dashboard.php"><button type="button" class="btn btn-default" name="submit" style="font-family:'Raleway'; font-size:12px; margin:0; margin-right:600px"><strong>Back</strong></button></a>
 									<br><p></p>
-                                    <!-- Input number of hours-->
-                                    <label for="checks"><font size=4 style="margin-left: 10px"><strong>Number of hours: </strong></font>
-                                    <input type="text" class="form-control" name="checks" size=20 maxsize=128 /></label>
-                                    <!-- Input payment amount-->
-                                    <label for="checks"><font size=4 style="margin-left: 10px"><strong>Payment amount: </strong></font>
-                                    <input type="text" class="form-control" name="checks" size=20 maxsize=128 /></label>
-                                    
-                                    <p></p>
-                                
-                                    <p>Payment start date: <input type="text" id="start"></p>
-                                    
-                                    <p>Payment end date: <input type="text" id="end"></p>
-                                
+									<table class="table table-striped sortable" style="font-family:'Raleway'; font-weight: 400">
+                                        <thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Hours</th>
+                                                <th>Wage</th>                                           
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                           <tr>
+                                              <td>2016-1-5</td>
+                                              <td>10:00am - 3:00pm</td>
+                                              <td>$75</td>
+                                           </tr>
+                                           <tr>
+                                              <td>2016-3-5</td>
+                                              <td>8:00am - 8:00pm</td>
+                                              <td>$180</td>
+                                           </tr>
+                                           <tr>
+                                              <td>2015-12-25</td>
+                                              <td>2:00pm - 10:00pm</td>
+                                              <td>$120</td>
+                                           </tr>
+                                           <tr>
+                                              <td>2016-4-20</td>
+                                              <td>6:00pm - 12:00am</td>
+                                              <td>$90</td>
+                                           </tr>
+                                           <tr>
+                                              <td>xxxx-xx-xx</td>
+                                              <td>xx:xx - xx:xx</td>
+                                              <td>$xxx</td>
+                                           </tr>
+                                        </tbody>
+                                     </table>
 								</div>
 							</div>							
 						</div>
@@ -177,5 +196,34 @@
 					<a href="privacy.html"><strong>Privacy Policy</strong></a>
 			</div>
 		</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/monthly.js"></script>
+<script type="text/javascript">
+	$(window).load( function() {
+
+		$('#mycalendar').monthly({
+			mode: 'event',
+			xmlUrl: 'events.xml'
+		});
+
+		$('#mycalendar2').monthly({
+			mode: 'picker',
+			target: '#mytarget',
+			setWidth: '250px',
+			startHidden: true,
+			showTrigger: '#mytarget',
+			stylePast: true,
+			disablePast: true
+		});
+
+	switch(window.location.protocol) {
+	case 'http:':
+	case 'https:':
+	// running on a server, should be good.
+	break;
+	}
+
+	});
+</script>
 	</body>
 </html>

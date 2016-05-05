@@ -1,10 +1,6 @@
 <?php
 	include_once('header2.php');
 ?>
-
-        <link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-        
 		<div class="row">
 		<script>
 			$(document).ready(function() {
@@ -56,18 +52,23 @@
 								<div class="jumbotron" style="background-color: #e0ecf0; border-radius: 3px; width: 700px; height: auto; margin-top: 30px; text-align: left; padding: 35px">
 									<a href="dashboard.php"><button type="button" class="btn btn-default" name="submit" style="font-family:'Raleway'; font-size:12px; margin:0; margin-right:600px"><strong>Back</strong></button></a>
 									<br><p></p>
-                                    <!-- Input number of hours-->
-                                    <label for="checks"><font size=4 style="margin-left: 10px"><strong>Number of hours: </strong></font>
-                                    <input type="text" class="form-control" name="checks" size=20 maxsize=128 /></label>
-                                    <!-- Input payment amount-->
-                                    <label for="checks"><font size=4 style="margin-left: 10px"><strong>Payment amount: </strong></font>
-                                    <input type="text" class="form-control" name="checks" size=20 maxsize=128 /></label>
-                                    
+                                    <!-- dorpdown menu for choosing paychecks-->
+                                    <div class="dropdown">
+                                        <font size=4 style="margin-left: 10px"><strong>I want to report a wage theft case with </strong></font>
+                                        <button class="btn btn-default dropdown-toggle" type="button"
+                                        id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+                                        style="margin: 10px 10px">
+                                            <strong>Select Paycheck</strong>
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="margin-left: 400px">
+                                          <li><a href="#">Job 1</a></li>
+                                        </ul>
+                                    </div>
                                     <p></p>
-                                
-                                    <p>Payment start date: <input type="text" id="start"></p>
-                                    
-                                    <p>Payment end date: <input type="text" id="end"></p>
+                                    <!-- Input box for user comments about the case-->
+									<input type="text" class="form-control" name="comments" style="width:620px; height: 150px; text-align: center"
+                                           placeholder="< Enter your description here, no more than 500 words. >">
                                 
 								</div>
 							</div>							

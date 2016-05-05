@@ -1,10 +1,10 @@
 <?php
 	include_once('header2.php');
 ?>
-
-        <link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-        
+		<link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>	
+		
+		<link rel="stylesheet" href="css/monthly.css">
 		<div class="row">
 		<script>
 			$(document).ready(function() {
@@ -53,22 +53,82 @@
 									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-right: 77px">Report case</font>
 									<font style="font-size: 17px; font-family:'Ubuntu'; color: black">Checks</font>
 								</div>
-								<div class="jumbotron" style="background-color: #e0ecf0; border-radius: 3px; width: 700px; height: auto; margin-top: 30px; text-align: left; padding: 35px">
-									<a href="dashboard.php"><button type="button" class="btn btn-default" name="submit" style="font-family:'Raleway'; font-size:12px; margin:0; margin-right:600px"><strong>Back</strong></button></a>
+								<div class="jumbotron" style="background-color: #e0ecf0; border-radius: 3px; width: 700px; height: auto; margin-top: 30px; text-align: center; padding-top: 25px">
+									
 									<br><p></p>
-                                    <!-- Input number of hours-->
-                                    <label for="checks"><font size=4 style="margin-left: 10px"><strong>Number of hours: </strong></font>
-                                    <input type="text" class="form-control" name="checks" size=20 maxsize=128 /></label>
-                                    <!-- Input payment amount-->
-                                    <label for="checks"><font size=4 style="margin-left: 10px"><strong>Payment amount: </strong></font>
-                                    <input type="text" class="form-control" name="checks" size=20 maxsize=128 /></label>
-                                    
-                                    <p></p>
-                                
-                                    <p>Payment start date: <input type="text" id="start"></p>
-                                    
-                                    <p>Payment end date: <input type="text" id="end"></p>
-                                
+									<input type="text" class="form-control" id="start" style="width: 500px; height: 50px; text-align: center; font-size: large" placeholder="Choose the date for your time entry">
+                                        <span class="input-group-btn" style="text-align: center">
+											<button id="button1" class="btn btn-default" type="button" onclick="viewme(1)" style="margin-top: 30px">Record Times</button>
+											<button id="button2" class="btn btn-default" type="button" onclick="viewme(2)" style="margin-top: 30px">Record Hours</button>
+											<div id="content1" style="float:left; display:block">
+												<div class="dropdown" style="float: left; margin-left: 60px">
+													<button class="btn btn-default dropdown-toggle" type="button"
+													id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+													style="margin: 30px 0; width: 200px">
+														<strong>Start Time</strong>
+														<span class="caret"></span>
+													</button>
+													<ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="width: 200px">
+													  <li><a href="#">1:00am</a></li>
+													  <li><a href="#">2:00am</a></li>
+													  <li><a href="#">3:00am</a></li>
+													  <li><a href="#">4:00am</a></li>
+													  <li><a href="#">5:00am</a></li>
+													  <li><a href="#">6:00am</a></li>
+													  <li><a href="#">7:00am</a></li>
+													  <li><a href="#">7:00am</a></li>
+													  <li><a href="#">8:00am</a></li>
+													  <li><a href="#">9:00am</a></li>
+													</ul>
+												</div>
+												<div class="dropdown" style="float: left">
+													<button class="btn btn-default dropdown-toggle" type="button"
+													id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+													style="margin: 30px 0; width: 200px">
+														<strong>End Time</strong>
+														<span class="caret"></span>
+													</button>
+													<ul class="dropdown-menu" aria-labelledby="dropdownMenu2" style="width: 200px">
+													  <li><a href="#">1:00am</a></li>
+													  <li><a href="#">2:00am</a></li>
+													  <li><a href="#">3:00am</a></li>
+													  <li><a href="#">4:00am</a></li>
+													  <li><a href="#">5:00am</a></li>
+													  <li><a href="#">6:00am</a></li>
+													  <li><a href="#">7:00am</a></li>
+													  <li><a href="#">7:00am</a></li>
+													  <li><a href="#">8:00am</a></li>
+													  <li><a href="#">9:00am</a></li>
+													</ul>
+												</div>
+											</div>
+											
+											<div id="content2" style="display: none; margin-left: 200px; margin-top: 30px">
+												<div class="input-group spinner" data-trigger="spinner" id="spinner"> 
+													<input type="text" class="form-control" value="1" data-max="100" data-min="0.5" data-step="1"> 
+													<div class="input-group-addon"> 
+														<a href="javascript：;" class="spin-up" data-spin="up"><i class="icon-sort-up"></i></a> 
+														<a href="javascript：;" class="spin-down" data-spin="down"><i class="icon-sort-down"></i></a> 
+													</div> 
+												</div>
+											</div>
+											<script type="text/javascript">
+											var temp=1;
+											function viewme(id)
+											{
+											document.getElementById("button"+id).style.backgroundColor="gray";
+											document.getElementById("button"+temp).style.backgroundColor="white";
+											document.getElementById("content"+temp).style.display = "none";
+											document.getElementById("content"+id).style.display = "block";
+											temp=id;
+											}
+											</script>
+                                          <!-- A modal here for editing info-->
+                                        </span>
+										<div class="row" style="margin-top: 30px">
+										<a href="dashboard.php"><button type="button" class="btn btn-default" name="submit" style="font-family:'Raleway'; font-size:12px; margin:0"><strong>Cancel</strong></button></a>
+										<button class="btn btn-default" type="submit" style="font-family:'Raleway'; font-size:12px"><strong>Save Changes</strong></button>								
+										</div>
 								</div>
 							</div>							
 						</div>
@@ -77,7 +137,7 @@
 							<div class="container" style="text-align: left">
 								<div class="jumbotron" style="background-color: #eedee3; border-radius: 3px; width: 700px; margin-top: 30px">
 									<a href="hours.php"><img src="hour.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-left: 18px; margin-right: 83px"></a>
-									<a href=""><img src="record.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
+									<a href="records.php"><img src="record.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
 									<a href=""><img src="report.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
 									<a href=""><img src="money.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black"></a>
 									<br><p></p>
@@ -86,9 +146,11 @@
 									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-right: 77px">Report case</font>
 									<font style="font-size: 17px; font-family:'Ubuntu'; color: black">Checks</font>
 								</div>
-								<div class="jumbotron" style="background-color: #dfd3d7; border-radius: 3px; width: 700px; height: auto; margin-top: 30px; text-align: center">
+								<div class="jumbotron" style="background-color: #e0ecf0; border-radius: 3px; width: 700px; height: auto; margin-top: 30px; text-align: center; padding-top: 25px">
+									<a href="dashboard.php"><button type="button" class="btn btn-default" name="submit" style="font-family:'Raleway'; font-size:12px; margin:0; margin-right:520px"><strong>Back</strong></button></a>
+									<br><p></p>
 									<div style="width:100%; max-width:900px; display:inline-block;">
-										<div class="monthly" id="mycalendar"></div>
+										<div class="monthly" id="mycalendar1"></div>
 									</div>									
 								</div>
 							</div>
@@ -99,7 +161,7 @@
 							<div class="container" style="text-align: left">
 								<div class="jumbotron" style="background-color: #eedee3; border-radius: 3px; width: 700px; margin-top: 30px">
 									<a href="hours.php"><img src="hour.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-left: 18px; margin-right: 83px"></a>
-									<a href=""><img src="record.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
+									<a href="records.php"><img src="record.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
 									<a href=""><img src="report.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
 									<a href=""><img src="money.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black"></a>
 									<br><p></p>
@@ -108,9 +170,11 @@
 									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-right: 77px">Report case</font>
 									<font style="font-size: 17px; font-family:'Ubuntu'; color: black">Checks</font>
 								</div>
-								<div class="jumbotron" style="background-color: #dfd3d7; border-radius: 3px; width: 700px; height: auto; margin-top: 30px; text-align: center">
+								<div class="jumbotron" style="background-color: #e0ecf0; border-radius: 3px; width: 700px; height: auto; margin-top: 30px; text-align: center; padding-top: 25px">
+									<a href="dashboard.php"><button type="button" class="btn btn-default" name="submit" style="font-family:'Raleway'; font-size:12px; margin:0; margin-right:520px"><strong>Back</strong></button></a>
+									<br><p></p>
 									<div style="width:100%; max-width:900px; display:inline-block;">
-										<div class="monthly" id="mycalendar"></div>
+										<div class="monthly" id="mycalendar2"></div>
 									</div>									
 								</div>
 							</div>	
@@ -177,5 +241,6 @@
 					<a href="privacy.html"><strong>Privacy Policy</strong></a>
 			</div>
 		</div>
+	
 	</body>
 </html>
