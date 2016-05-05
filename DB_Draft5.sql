@@ -95,7 +95,7 @@ CREATE TABLE JobAssignments_T (
 
 CREATE TABLE EmployeeHours_T (
 	HourEntryID			int unsigned			NOT NULL	AUTO_INCREMENT,
-	NumHours			int unsigned			NOT NULL,
+	NumHours			decimal(3,1) unsigned	NOT NULL,
 	EntryDate			date					NOT NULL,
 	
 	/*FKs*/
@@ -109,14 +109,22 @@ CREATE TABLE EmployeeHours_T (
 	
 CREATE TABLE Paychecks_T (
 	PaycheckID			int unsigned			NOT NULL	AUTO_INCREMENT,
-	PaycheckNumHours	int unsigned			NOT NULL,
-	AmountPaid			int unsigned			NOT NULL,
+	PaycheckNumHours	decimal(4,1) unsigned	NOT NULL,
+	AmountPaid			float unsigned			NOT NULL,
 	PayPeriodStartDate	date					NOT NULL,
 	PayPeriodEndDate	date					NOT NULL,
 	
 	/* This attribute determines whether an NPO has inserted this paycheck into a W.T. claim.
 	   (0: not in claim; 1: in claim) */
 	InWageTheftClaim	int unsigned			NOT NULL,
+	
+	/* When users enter paycheck information (after completing all hour
+	entries for the pay period), algorithm checks num hours entered by
+	user and estimated earnings for that pay period & sets a flag if 
+	there is potential wage theft.
+		(0: unflagged; 1: flagged)
+	*/
+	WageTheftFlag		int unsigned			NOT NULL,
 	
 	/*FKs*/
 	UserID 				int unsigned			NOT NULL,
