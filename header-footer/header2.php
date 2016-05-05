@@ -15,36 +15,40 @@
 	$db = connectDB($DBHost,$DBUser,$DBPasswd,$DBName);
 	$userEmail = $_SESSION['userEmail'];
 	$userID = nextTuple(queryDB("SELECT UserID FROM Users_T WHERE UserEmail='$userEmail'", $db))['UserID'];
+	$userTypeID = nextTuple(queryDB("SELECT UserTypeID FROM Users_T WHERE UserEmail='$userEmail'", $db))['UserTypeID'];
 	
 	// determine first name of current user for greeting in header
 	$userFirstName = nextTuple(queryDB("SELECT UserFirstName FROM Users_T WHERE UserID=$userID", $db))['UserFirstName'];
 	
-	// fetch jobAssignmentID for tool from URL
-	$URLjobAssignmentID = $_GET['jobAssignmentID'];
-	//echo "GET result: " . $URLjobAssignmentID;
+	if ($userTypeID == 3){
 	
-	// query DB to see if user has URL jobAssignmentID in their associated IDs
-	$jobAssignmentIDQuery = "SELECT COUNT(JobAssignmentID) FROM JobAssignments_T WHERE UserID='$userID' AND JobAssignmentID='$URLjobAssignmentID'"; 
-	
-	$jobAssignmentIDCheckValue = nextTuple(queryDB($jobAssignmentIDQuery, $db))['COUNT(JobAssignmentID)'];
-	//echo "jobAssignmentID check value: " . $jobAssignmentIDCheckValue;
-	
-	//echo "http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-	
-	if ($_SERVER['PHP_SELF'] == "/~jlin4/WageGuard/dashboard.php"){
-		goto skipChecks;
+		// fetch jobAssignmentID for tool from URL
+		$URLjobAssignmentID = $_GET['jobAssignmentID'];
+		//echo "GET result: " . $URLjobAssignmentID;
+		
+		// query DB to see if user has URL jobAssignmentID in their associated IDs
+		if ($URLjobAssignmentID){
+			$jobAssignmentIDQuery = "SELECT COUNT(JobAssignmentID) FROM JobAssignments_T WHERE UserID='$userID' AND JobAssignmentID='$URLjobAssignmentID'"; 
+			
+			$jobAssignmentIDCheckValue = nextTuple(queryDB($jobAssignmentIDQuery, $db))['COUNT(JobAssignmentID)'];
+			//echo "jobAssignmentID check value: " . $jobAssignmentIDCheckValue;
+		};
+		//echo "http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
+		/*
+		if ($_SERVER['PHP_SELF'] == "/~jlin4/WageGuard/dashboard.php"){
+			goto skipChecks;
+		};
+		
+		if ($URLjobAssignmentID == 0){
+			header('Location: dashboard.php');
+		};
+		
+		if ($jobAssignmentIDCheckValue == 0){
+			header('Location: dashboard.php');
+		};
+		
+		skipChecks: echo "";*/
 	};
-	
-	if ($URLjobAssignmentID == 0){
-		header('Location: dashboard.php');
-	};
-	
-	if ($jobAssignmentIDCheckValue == 0){
-		header('Location: dashboard.php');
-	};
-	
-	skipChecks: echo "";
-	
 ?>
 	
 <html>
