@@ -1,5 +1,6 @@
 <?php
 	include_once('header2.php');
+			
 ?>
 
         <link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
@@ -18,119 +19,118 @@
 				});
 			});
 		</script>
+		
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-11 bhoechie-tab-container">
 					
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 bhoechie-tab-menu">
-						<div class="list-group" style="font-size: 17px; font-family:'Ubuntu'; color: #581a2d">
-						  <a href="#" class="list-group-item active text-center">
-							  <br/>JOB TITLE &nbsp; #1<br/><br>
-						  </a>
-						  <a href="#" class="list-group-item text-center">
-							  <br/>JOB TITLE &nbsp; #2<br/><br>
-						  </a>
-						  <a href="#" class="list-group-item text-center">
-							  <br/>JOB TITLE &nbsp; #3<br/><br>
-						  </a>
-						</div>
-						<br><br>
-						<a class="btn" style="margin-left: 55px" data-toggle="modal" data-target="#elogin"><img alt="Capital W" src="add.png" width=40 height=40></a>
-					</div>
+					<?php include_once('generatePaychecksMenuBar.php'); ?>
 					
 					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 bhoechie-tab">
 						
 						<div class="bhoechie-tab-content active">
 							<div class="container" style="text-align: left">
 								<div class="jumbotron" style="background-color: #eedee3; border-radius: 3px; width: 700px; margin-top: 30px">
-									<a href="hours.php"><img src="hour.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-left: 18px; margin-right: 83px"></a>
-									<a href="records.php"><img src="record.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
-									<a href="report.php"><img src="report.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
-									<a href="checks.php"><img src="money.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black"></a>
+								
+									<a href="hours.php?jobAssignmentID=<?php echo "$URLjobAssignmentID";?>"><img src="hour.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-left: 18px; margin-right: 83px"></a>
+									
+									<a href="records.php?jobAssignmentID=<?php echo "$URLjobAssignmentID";?>"><img src="record.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
+									
+									<a href="report.php?jobAssignmentID=<?php echo "$URLjobAssignmentID";?>"><img src="report.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
+									
+									<a href="checks.php?jobAssignmentID=<?php echo "$URLjobAssignmentID";?>"><img src="money.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black"></a>
+									
 									<br><p></p>
+									
 									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-left: 11px; margin-right: 60px">Post Hours</font>
+									
 									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-right: 56px">Time Records</font>
+									
 									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-right: 77px">Report case</font>
+									
 									<font style="font-size: 17px; font-family:'Ubuntu'; color: black">Checks</font>
+									
 								</div>
 								<div class="jumbotron" style="background-color: #e0ecf0; border-radius: 3px; width: 700px; height: auto; margin-top: 30px; text-align: left; padding: 35px">
 									<br><p></p>
-                                    <!-- dorpdown menu for choosing paying hours-->
-                                    <label for="checks"><font size=4 style="margin-left: 10px"><strong>Number of hours: </strong></font>
-                                    <input type="text" class="form-control" name="checks" size=20 maxsize=128 /></label>
-                                    <!-- Input payment amount-->
-                                    <label for="checks"><font size=4 style="margin-left: 10px"><strong>Payment amount: </strong></font>
-                                    <input type="text" class="form-control" name="checks" size=20 maxsize=128 /></label>
+									
+                                    <label for="numHours"><font size=4 style="margin-left: 10px"><strong>Number of hours worked: </strong></font>
+									
+                                    <input type="text" class="form-control" name="numHours" size=20 maxsize=128 /></label>
                                     
-                                    <p></p>
-                                
-                                    <p>Payment start date: <input type="text" id="startdate"></p>
+									<!-- $ Amount paid -->
+                                    <label for="amountPaid"><font size=4 style="margin-left: 10px"><strong>Amount Paid (before tax): </strong></font>
+                                    <input type="text" class="form-control" name="amountPaid" size=20 maxsize=128 /></label>
                                     
-                                    <p>Payment end date: <input type="text" id="enddate"></p>
-									<script type="text/javascript">
-										$(function() {
-												$("#startdate").datepicker({ dateFormat: "yy-mm-dd" }).val()
-												$("#enddate").datepicker({ dateFormat: "yy-mm-dd" }).val()
-										});
-								 
-									</script>
+                                    <label for="payPdStartDate"><font size=4 style="margin-left: 10px"><strong>Pay Period Start Date: </strong></font>
+                                    <input type="text" class="form-control" name="payPdStartDate" size=20 maxsize=128 /></label>
+                                    
+                                    <label for="payPdEndDate"><font size=4 style="margin-left: 10px"><strong>Pay Period End Date: </strong></font>
+                                    <input type="text" class="form-control" name="payPdEndDate" size=20 maxsize=128 /></label>
+									
 									<div class="row" style="margin-top: 30px">
+									
 										<a href="dashboard.php"><button type="button" class="btn btn-default" name="submit" style="font-family:'Raleway'; font-size:12px; margin-left: 470px"><strong>Back</strong></button></a>
-										<button class="btn btn-default" type="submit" style="font-family:'Raleway'; font-size:12px; margin-left: 10px"><strong>Post</strong></button>								
+										
+										<button class="btn btn-default" type="submit" name="submitHours" style="font-family:'Raleway'; font-size:12px; margin-left: 10px"><strong>Post</strong></button>								
 									</div>
+									
+									<?php 
+										//echo "GET result: " . $URLjobAssignmentID;
+	
+										// prepare $_POST data
+										
+										if (isset($_POST['submit'])){
+											echo "Processing form data..";
+											
+											$numHours 		= 	$_POST['numHours'];
+											$amountPaid 	= 	$_POST['amountPaid'];
+											$payPdStartDate	=	$_POST['payPdStartDate'];
+											$payPdEndDate	=	$_Post['payPdEndDate'];
+											
+											if (!$numHours){
+												punt("Please enter the number of hours worked.");
+											};
+											if (!$amountPaid){
+												punt("Please enter the amount paid (before tax).");
+											};
+											if (!$payPdStartDate){
+												punt("Please enter the start date of the pay period.");
+											};
+											if (!$payPdEndDate){
+												punt("Please enter the end date of the pay period.");
+											};
+											
+											// set up query
+											$insertPaycheckQuery = "INSERT INTO Paychecks_T (PaycheckNumHours, AmountPaid, PayPeriodStartDate, PayPeriodEndDate, InWageTheftClaim, WageTheftFlag, UserID, JobAssignmentID) VALUES ($numHours, $amountPaid, '$payPdStartDate', '$payPdEndDate', 0, 0, $userID, $URLjobAssignmentID)";
+											
+											// run query
+											$insertPaycheckInfo = queryDB($insertPaycheckQuery, $db);
+											
+												// tell users that we added the paycheck to the database
+											echo "<div class='modal fade' id='myModal'>\n";
+											echo "<div class='modal-dialog modal-lg' style='padding-top: 240px'>\n";
+											echo "<div class='modal-content' style='text-align: center; border-radius: 2px'>\n";
+											echo "<div class='modal-body'>\n";
+											echo "\t<br><font size=5 style='font-family:'Ubuntu'; color: #6c6c76; margin-top:400px;'><strong>Your paycheck from " . $payPdStartDate . " - " . $payPdEndDate . " has been added to the database.</strong></font></div><br><br>\n";
+											echo "<a href='dashboard.php'><button type='button' class='btn btn-default' style='margin-right: 20px; margin-bottom:30px; border: 1px solid black; color: black; border-radius: 0; font-size: 21px; padding: 4px 8px'><strong>Back to dashboard</strong></button></a>\n";
+											echo "<script>\n";
+											echo "\t$('#myModal').modal({backdrop: 'static', keyboard: false});\n";
+											echo "</script></div></div></div>\n";
+										};
+									?>
 								</div>
 							</div>							
 						</div>
-						
-						<div class="bhoechie-tab-content">
-							<div class="container" style="text-align: left">
-								<div class="jumbotron" style="background-color: #eedee3; border-radius: 3px; width: 700px; margin-top: 30px">
-									<a href="hours.php"><img src="hour.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-left: 18px; margin-right: 83px"></a>
-									<a href=""><img src="record.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
-									<a href=""><img src="report.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
-									<a href=""><img src="money.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black"></a>
-									<br><p></p>
-									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-left: 11px; margin-right: 60px">Post Hours</font>
-									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-right: 56px">Time Records</font>
-									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-right: 77px">Report case</font>
-									<font style="font-size: 17px; font-family:'Ubuntu'; color: black">Checks</font>
-								</div>
-								<div class="jumbotron" style="background-color: #dfd3d7; border-radius: 3px; width: 700px; height: auto; margin-top: 30px; text-align: center">
-									<div style="width:100%; max-width:900px; display:inline-block;">
-										<div class="monthly" id="mycalendar"></div>
-									</div>									
-								</div>
-							</div>
-						</div>
-			
-						
-						<div class="bhoechie-tab-content">
-							<div class="container" style="text-align: left">
-								<div class="jumbotron" style="background-color: #eedee3; border-radius: 3px; width: 700px; margin-top: 30px">
-									<a href="hours.php"><img src="hour.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-left: 18px; margin-right: 83px"></a>
-									<a href=""><img src="record.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
-									<a href=""><img src="report.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
-									<a href=""><img src="money.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black"></a>
-									<br><p></p>
-									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-left: 11px; margin-right: 60px">Post Hours</font>
-									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-right: 56px">Time Records</font>
-									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-right: 77px">Report case</font>
-									<font style="font-size: 17px; font-family:'Ubuntu'; color: black">Checks</font>
-								</div>
-								<div class="jumbotron" style="background-color: #dfd3d7; border-radius: 3px; width: 700px; height: auto; margin-top: 30px; text-align: center">
-									<div style="width:100%; max-width:900px; display:inline-block;">
-										<div class="monthly" id="mycalendar"></div>
-									</div>									
-								</div>
-							</div>	
-						</div>
+					
+					<!-- end primary content -->
 					</div>
 					
 				</div>
 			</div>
 		</div>
 		
-		<div class="modal fade" id="elogin" role="dialog">
+		<!--<div class="modal fade" id="elogin" role="dialog">
 			<div class="modal-dialog modal-lg" style='padding-top: 120px'>							
 				<div class="modal-content" style="border-radius: 2px; padding-bottom: 50px">
 					<div class="row" style="margin-left: 50px; font-family:'Raleway'; color: black">
@@ -173,7 +173,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>-->
 		
 		<br>
 		&nbsp;
