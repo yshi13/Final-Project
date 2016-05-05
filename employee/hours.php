@@ -56,51 +56,25 @@
 								<div class="jumbotron" style="background-color: #e0ecf0; border-radius: 3px; width: 700px; height: auto; margin-top: 30px; text-align: center; padding-top: 25px">
 									
 									<br><p></p>
-									<input type="text" class="form-control" id="start" style="width: 500px; height: 50px; text-align: center; font-size: large" placeholder="Choose the date for your time entry">
+									<input type="text" class="form-control" id="start" style="margin-left: 50px; width: 500px; height: 50px; text-align: center; font-size: large" placeholder="Choose the date for your time entry">
                                         <span class="input-group-btn" style="text-align: center">
-											<button id="button1" class="btn btn-default" type="button" onclick="viewme(1)" style="margin-top: 30px">Record Times</button>
-											<button id="button2" class="btn btn-default" type="button" onclick="viewme(2)" style="margin-top: 30px">Record Hours</button>
-											<div id="content1" style="float:left; display:block">
-												<div class="dropdown" style="float: left; margin-left: 60px">
-													<button class="btn btn-default dropdown-toggle" type="button"
-													id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
-													style="margin: 30px 0; width: 200px">
-														<strong>Start Time</strong>
-														<span class="caret"></span>
-													</button>
-													<ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="width: 200px">
-													  <li><a href="#">1:00am</a></li>
-													  <li><a href="#">2:00am</a></li>
-													  <li><a href="#">3:00am</a></li>
-													  <li><a href="#">4:00am</a></li>
-													  <li><a href="#">5:00am</a></li>
-													  <li><a href="#">6:00am</a></li>
-													  <li><a href="#">7:00am</a></li>
-													  <li><a href="#">7:00am</a></li>
-													  <li><a href="#">8:00am</a></li>
-													  <li><a href="#">9:00am</a></li>
-													</ul>
-												</div>
-												<div class="dropdown" style="float: left">
-													<button class="btn btn-default dropdown-toggle" type="button"
-													id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
-													style="margin: 30px 0; width: 200px">
-														<strong>End Time</strong>
-														<span class="caret"></span>
-													</button>
-													<ul class="dropdown-menu" aria-labelledby="dropdownMenu2" style="width: 200px">
-													  <li><a href="#">1:00am</a></li>
-													  <li><a href="#">2:00am</a></li>
-													  <li><a href="#">3:00am</a></li>
-													  <li><a href="#">4:00am</a></li>
-													  <li><a href="#">5:00am</a></li>
-													  <li><a href="#">6:00am</a></li>
-													  <li><a href="#">7:00am</a></li>
-													  <li><a href="#">7:00am</a></li>
-													  <li><a href="#">8:00am</a></li>
-													  <li><a href="#">9:00am</a></li>
-													</ul>
-												</div>
+											<button id="button1" class="btn btn-default" type="button" onclick="viewme(1)" style="margin-top: 30px; width: 300px">Record Times</button>
+											<button id="button2" class="btn btn-default" type="button" onclick="viewme(2)" style="margin-top: 30px; width: 300px">Record Hours</button>
+											<br><div id="content1" style="float:left; display:block; margin-top: 20px; text-align: center">
+												<p style="float: left">Start time:</p>
+												<select style="float: left; margin-left: 30px; margin-top: 7px; width: 140px">													
+													<option value ="1">1:00am</option>
+													<option value ="2">2:00am</option>
+													<option value="3">3:00am</option>
+													<option value="4">4:00am</option>
+												</select>
+												<p style="float: left; margin-left: 80px">End time:</p>
+												<select style="float: left; margin-left: 30px; margin-top: 7px; width: 140px">													
+													<option value ="1">1:00am</option>
+													<option value ="2">2:00am</option>
+													<option value="3">3:00am</option>
+													<option value="4">4:00am</option>
+												</select>
 											</div>
 											
 											<div id="content2" style="display: none; margin-left: 200px; margin-top: 30px">
