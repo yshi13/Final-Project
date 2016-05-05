@@ -15,149 +15,16 @@
 			});
 		</script>
 		<div class="container">
+		
 			<div class="row">
-				<div class="col-xs-11 bhoechie-tab-container">
-					
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 bhoechie-tab-menu">
-						<div class="list-group" style="font-size: 17px; font-family:'Ubuntu'; color: #581a2d">
-						  <a href="#" class="list-group-item active text-center">
-							  <br/>JOB TITLE &nbsp; #1<br/><br>
-						  </a>
-						  <a href="#" class="list-group-item text-center">
-							  <br/>JOB TITLE &nbsp; #2<br/><br>
-						  </a>
-						  <a href="#" class="list-group-item text-center">
-							  <br/>JOB TITLE &nbsp; #3<br/><br>
-						  </a>
-						</div>
-						<br><br>
-						<a class="btn" style="margin-left: 55px" data-toggle="modal" data-target="#elogin"><img alt="Capital W" src="add.png" width=40 height=40></a>
-					</div>
-					
-					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 bhoechie-tab">
-						
-						<div class="bhoechie-tab-content active">
-							<div class="container" style="text-align: left">
-								<div class="jumbotron" style="background-color: #eedee3; border-radius: 3px; width: 700px; margin-top: 30px">
-									<a href="hours.php"><img src="hour.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-left: 18px; margin-right: 83px"></a>
-									<a href="records.php"><img src="record.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
-									<a href="report.php"><img src="report.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
-									<a href="checks.php"><img src="money.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black"></a>
-									<br><p></p>
-									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-left: 11px; margin-right: 60px">Post Hours</font>
-									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-right: 56px">Time Records</font>
-									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-right: 77px">Report case</font>
-									<font style="font-size: 17px; font-family:'Ubuntu'; color: black">Checks</font>
-								</div>
-								<div class="jumbotron" style="background-color: #dfd3d7; border-radius: 3px; width: 700px; height: 440px; margin-top: 30px; text-align: center">
-									<div class="alert alert-danger" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #a95050"><strong>You have No Wage Theft alert.</strong></font>
-										</a>
-									</div>
-									<div class="alert alert-success" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #459a46"><strong>You have worked 233 Hours in 2016.</strong></font>
-										</a>
-									</div>
-									<div class="alert alert-info" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #42a0e7"><strong>You recently entered 3 paychecks.</strong></font>
-										</a>
-									</div>
-									<div class="alert alert-warning" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #a4a553"><strong>New policy updated.</strong></font>
-										</a>
-									</div>									
-								</div>
-							</div>							
-						</div>
-						
-						<div class="bhoechie-tab-content">
-							<div class="container" style="text-align: left">
-								<div class="jumbotron" style="background-color: #eedee3; border-radius: 3px; width: 700px; margin-top: 30px">
-									<a href="hours.php"><img src="hour.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-left: 18px; margin-right: 83px"></a>
-									<a href="records.php"><img src="record.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
-									<a href="report.php"><img src="report.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
-									<a href=""><img src="money.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black"></a>
-									<br><p></p>
-									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-left: 11px; margin-right: 60px">Post Hours</font>
-									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-right: 56px">Time Records</font>
-									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-right: 77px">Report case</font>
-									<font style="font-size: 17px; font-family:'Ubuntu'; color: black">Checks</font>
-								</div>
-								<div class="jumbotron" style="background-color: #dfd3d7; border-radius: 3px; width: 700px; height: 440px; margin-top: 30px; text-align: center">
-									<div class="alert alert-danger" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #a95050"><strong>You have 22 Wage Theft alert.</strong></font>
-										</a>
-									</div>
-									<div class="alert alert-success" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #459a46"><strong>You have worked 40 Hours in this month.</strong></font>
-										</a>
-									</div>
-									<div class="alert alert-info" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #42a0e7"><strong>You recently entered no paychecks.</strong></font>
-										</a>
-									</div>
-									<div class="alert alert-warning" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #a4a553"><strong>You have No Wage Theft alert.</strong></font>
-										</a>
-									</div>									
-								</div>
-							</div>
-						</div>
 			
-						
-						<div class="bhoechie-tab-content">
-							<div class="container" style="text-align: left">
-								<div class="jumbotron" style="background-color: #eedee3; border-radius: 3px; width: 700px; margin-top: 30px">
-									<a href="hours.php"><img src="hour.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-left: 18px; margin-right: 83px"></a>
-									<a href="records.php"><img src="record.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
-									<a href=""><img src="report.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black; margin-right: 83px"></a>
-									<a href=""><img src="money.png" width=70 height=70 style="border-radius: 3px; border: 2px solid black"></a>
-									<br><p></p>
-									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-left: 11px; margin-right: 60px">Post Hours</font>
-									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-right: 56px">Time Records</font>
-									<font style="font-size: 17px; font-family:'Ubuntu'; color: black; margin-right: 77px">Report case</font>
-									<font style="font-size: 17px; font-family:'Ubuntu'; color: black">Checks</font>
-								</div>
-								<div class="jumbotron" style="background-color: #dfd3d7; border-radius: 3px; width: 700px; height: 440px; margin-top: 30px; text-align: center">
-									<div class="alert alert-danger" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #a95050"><strong>This is for testing.</strong></font>
-										</a>
-									</div>
-									<div class="alert alert-success" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #459a46"><strong>This is for testing.</strong></font>
-										</a>
-									</div>
-									<div class="alert alert-info" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #42a0e7"><strong>This is for testing.</strong></font>
-										</a>
-									</div>
-									<div class="alert alert-warning" role="alert">
-										<a href="#" class="alert-link">
-											<font style="font-size: 25px; font-family:'Raleway'; color: #a4a553"><strong>BYE, KOBE 24.</strong></font>
-										</a>
-									</div>									
-								</div>
-							</div>
-						</div>
-						
-					</div>
-					
-				</div>
-			</div>
-		</div>
+				<!-- this PHP function generates content for dashboard for any user type. -->
+				<?php include_once('generateDashboardContent.php'); ?>
+			
+			
 		<!-- Modal for adding jobs-->
-		<div class="modal fade" id="elogin" role="dialog">
+		
+		<!--<div class="modal fade" id="elogin" role="dialog">
 			<div class="modal-dialog modal-lg" style='padding-top: 120px'>							
 				<div class="modal-content" style="border-radius: 2px; padding-bottom: 50px">
 					<div class="row" style="margin-left: 50px; font-family:'Raleway'; color: black">
@@ -200,7 +67,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>-->
 		
 		<br>
 		&nbsp;

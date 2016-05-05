@@ -40,15 +40,13 @@ CREATE TABLE Users_T(
 	VerifyCode			varchar(10)				NULL,
 	UserPassword		varchar(255)			NOT NULL,
 	
-
+	/* FKs */
 	UserTypeID			int unsigned			NOT NULL,
-	/*(admin: 0, npo: 1, employee: 2) for now*/
+	/*(admin: 1, npo: 2, employee: 3) for now*/
 	
 	PRIMARY KEY 		(UserID),
 	FOREIGN KEY 		(UserTypeID) 			REFERENCES 	UserTypes_T (UserTypeID)
 );
-/*Root admin generation*/
-INSERT INTO Users_T(UserID, UserFirstName, UserLastName, UserDOB, UserEmail, UserPassword, UserTypeID) VALUES ('admin', 'Root', 'Admin', 'Male', 'dummyEmail@test.test', 'password', 0);
 
 CREATE TABLE Employers_T (
 	EmployerID			int unsigned			NOT NULL	AUTO_INCREMENT,
@@ -57,7 +55,8 @@ CREATE TABLE Employers_T (
 	
 	PRIMARY KEY			(EmployerID)
 );
-INSERT INTO Employers_T(EmployerID, EmployerName, EmployerAddress) VALUES (0, 'Test Employer', 'Test Employer Address Way, CA');
+INSERT INTO Employers_T(EmployerID, EmployerName, EmployerAddress) VALUES (1, 'Test Employer', 'Test Employer Address Way, CA');
+INSERT INTO Employers_T(EmployerID, EmployerName, EmployerAddress) VALUES (2, 'Test Employer 2', 'Test Employer Address Way, CA');
 
 CREATE TABLE ParentCompanies_T(
 	ParentCompanyID		int unsigned			NOT NULL	AUTO_INCREMENT,
@@ -65,7 +64,7 @@ CREATE TABLE ParentCompanies_T(
 	
 	PRIMARY KEY			(ParentCompanyID)
 );
-INSERT INTO ParentCompanies_T(ParentCompanyID, ParentCompanyName) VALUES (0, 'Test Parent Company');
+INSERT INTO ParentCompanies_T(ParentCompanyID, ParentCompanyName) VALUES (1, 'Test Parent Company');
 
 CREATE TABLE Jobs_T (
 	JobID				int unsigned			NOT NULL	AUTO_INCREMENT,
@@ -77,8 +76,8 @@ CREATE TABLE Jobs_T (
 	PRIMARY KEY 		(JobID),
 	FOREIGN KEY 		(EmployerID)			REFERENCES	Employers_T (EmployerID)
 );
-INSERT INTO Jobs_T (JobID, JobName) VALUES (1, 'Test Job');
-INSERT INTO Jobs_T (JobID, JobName) VALUES (1, 'Test Job 2');
+INSERT INTO Jobs_T (JobName, EmployerID) VALUES ('Test Job', 1);
+INSERT INTO Jobs_T (JobName, EmployerID) VALUES ('Test Job 2', 2);
 
 CREATE TABLE JobAssignments_T (
 	JobAssignmentID		int unsigned			NOT NULL	AUTO_INCREMENT,
@@ -92,7 +91,7 @@ CREATE TABLE JobAssignments_T (
 	FOREIGN KEY 		(UserID)				REFERENCES	Users_T (UserID),
 	FOREIGN KEY			(JobID)					REFERENCES	Jobs_T (JobID)
 );
-INSERT INTO JobAssignments_T (UserID, JobID, PayRate) VALUES (2, 1, 20.50);
+/*INSERT INTO JobAssignments_T (UserID, JobID, PayRate) VALUES (2, 1, 20.50);*/
 
 CREATE TABLE EmployeeHours_T (
 	HourEntryID			int unsigned			NOT NULL	AUTO_INCREMENT,
@@ -115,19 +114,25 @@ CREATE TABLE Paychecks_T (
 	PayPeriodStartDate	date					NOT NULL,
 	PayPeriodEndDate	date					NOT NULL,
 	
+	/* This attribute determines whether an NPO has inserted this paycheck into a W.T. claim.
+	   (0: not in claim; 1: in claim) */
+	InWageTheftClaim	int unsigned			NOT NULL,
 	
 	/*FKs*/
 	UserID 				int unsigned			NOT NULL,
-	EmployerID			int unsigned			NOT NULL,
+	JobAssignmentID		int unsigned			NOT NULL,
 	
 	PRIMARY KEY			(PaycheckID),
 	FOREIGN KEY			(UserID)				REFERENCES	Users_T (UserID),
-	FOREIGN KEY			(EmployerID)			REFERENCES	Employers_T (EmployerID)
+	FOREIGN KEY			(JobAssignmentID)		REFERENCES	JobAssignments_T (JobAssignmentID)
 );
 
 CREATE TABLE UserReports_T (
 	UserReportID		int unsigned			NOT NULL	AUTO_INCREMENT,
 	ReportComment		varchar(500)			NULL,
+	
+	/* This attribute determines whether an NPO has read the current report. */
+	ReportRead			int unsigned			NOT NULL,
 	
 	/*FKs*/
 	UserID 				int unsigned			NOT NULL,
@@ -159,7 +164,6 @@ CREATE TABLE TheftCaseMappings_T (
 	/*FKs*/
 	TheftCaseID			int unsigned 			NOT NULL,
 	PaycheckID			int unsigned			NOT NULL,
-	
 	
 	FOREIGN KEY			(TheftCaseID)			REFERENCES	TheftCases_T (TheftCaseID),
 	FOREIGN KEY			(PaycheckID)			REFERENCES	Paychecks_T (PaycheckID)
