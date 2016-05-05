@@ -57,21 +57,8 @@
 									<a href="dashboard.php"><button type="button" class="btn btn-default" name="submit" style="font-family:'Raleway'; font-size:12px; margin:0; margin-right:600px"><strong>Back</strong></button></a>
 									<br><p></p>
                                     <!-- dorpdown menu for choosing paying hours-->
-                                    <div class="dropdown">
-                                        <font size=4 style="margin-left: 10px"><strong>Number of hours: </strong></font>
-                                        <button class="btn btn-default dropdown-toggle" type="button"
-                                        id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
-                                        style="margin: 10px 10px">
-                                            <strong>Select hours</strong>
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="margin-left: 100px">
-                                          <li><a href="#">10 hours</a></li>
-                                          <li><a href="#">20 hours</a></li>
-                                          <li><a href="#">30 hours</a></li>
-                                          <li><a href="#">40 hours</a></li>
-                                        </ul>
-                                    </div>
+                                    <label for="checks"><font size=4 style="margin-left: 10px"><strong>Number of hours: </strong></font>
+                                    <input type="text" class="form-control" name="checks" size=20 maxsize=128 /></label>
                                     <!-- Input payment amount-->
                                     <label for="checks"><font size=4 style="margin-left: 10px"><strong>Payment amount: </strong></font>
                                     <input type="text" class="form-control" name="checks" size=20 maxsize=128 /></label>
