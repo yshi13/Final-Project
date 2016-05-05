@@ -53,10 +53,14 @@ CREATE TABLE Employers_T (
 	EmployerName 		varchar(128)			NOT NULL,
 	EmployerAddress		varchar(128)			NOT NULL,
 	
+	/* This var indicates whether an employer is an alleged wage thief.
+		(0: unflagged, 1: flagged) */
+	EmployerFlag		int unsigned			NOT NULL,
+	
 	PRIMARY KEY			(EmployerID)
 );
-INSERT INTO Employers_T(EmployerID, EmployerName, EmployerAddress) VALUES (1, 'Test Employer', 'Test Employer Address Way, CA');
-INSERT INTO Employers_T(EmployerID, EmployerName, EmployerAddress) VALUES (2, 'Test Employer 2', 'Test Employer Address Way, CA');
+INSERT INTO Employers_T(EmployerID, EmployerName, EmployerAddress, EmployerFlag) VALUES (1, 'Test Employer', 'Test Employer Address Way, CA', 0);
+INSERT INTO Employers_T(EmployerID, EmployerName, EmployerAddress, EmployerFlag) VALUES (2, 'Test Employer 2', 'Test Employer Address Way, CA', 0);
 
 CREATE TABLE ParentCompanies_T(
 	ParentCompanyID		int unsigned			NOT NULL	AUTO_INCREMENT,
@@ -145,16 +149,10 @@ CREATE TABLE UserReports_T (
 	/*FKs*/
 	UserID 				int unsigned			NOT NULL,
 	PaycheckID			int unsigned			NOT NULL,
-	/*
-	PayPeriodStartDate	date					NOT NULL,
-	PayPeriodEndDate	date					NOT NULL,*/
 	
 	PRIMARY KEY			(UserReportID),
 	FOREIGN KEY			(UserID)				REFERENCES	Users_T (UserID),
 	FOREIGN KEY			(PaycheckID)			REFERENCES	Paychecks_T (PaycheckID)
-	/*,
-	FOREIGN KEY			(PayPeriodStartDate) 	REFERENCES	Paychecks_T (PayPeriodStartDate),
-	FOREIGN KEY			(PayPeriodEndDate)		REFERENCES	Paychecks_T (PayPeriodEndDate)*/
 );
 
 CREATE TABLE TheftCases_T (
@@ -175,8 +173,6 @@ CREATE TABLE TheftCaseMappings_T (
 	
 	FOREIGN KEY			(TheftCaseID)			REFERENCES	TheftCases_T (TheftCaseID),
 	FOREIGN KEY			(PaycheckID)			REFERENCES	Paychecks_T (PaycheckID)
-	
-	/* check normalization on paycheck IDs in relation to users,jobs,etc */
 );
 
 /* Re-enable foreign key constraint checks */
