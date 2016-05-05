@@ -1,67 +1,7 @@
 <?php
 	include_once('header.php');
-?>
-
-<?php
-// Back to PHP to perform the search if one has been submitted. Note
-// that $_POST['submit'] will be set only if you invoke this PHP code as
-// the result of a POST action, presumably from having pressed Submit
-// on the form we just displayed above.
-
-if (isset($_POST['submit'])) {
+?>            
 	
-//	echo '<p>we are processing form data</p>';
-//	print_r($_POST);
-
-	// get data from the input fields
-	$email = $_POST['eemail'];
-	$password = $_POST['epassword'];
-	
-	
-	// check to make sure we have an email
-	if (!$email) {
-		header("Location: login.php");
-	}
-	
-	if (!$password) {
-		header("Location: login.php");
-	}
-
-	// check if user is in the database
-		// connect to database
-	$db = connectDB($DBHost,$DBUser,$DBPasswd,$DBName);
-	
-	// set up my query
-	$query = "SELECT email, hashedPass FROM Users WHERE email='$email';";
-	
-	// run the query
-	$result = queryDB($query, $db);
-	
-	
-	// check if the email is there
-	if (nTuples($result) > 0) {
-		$row = nextTuple($result);
-		
-		if ($row['hashedPass'] == crypt($password, $row['hashedPass'])) {
-			// Password is correct
-			if (session_start()) {
-				$_SESSION['eemail'] = $email;
-				header('Location: dashboard.php');
-			} else {
-				punt("Unable to create session");
-			}
-		} else {
-			// Password is not correct
-			punt('The password you entered is incorrect');
-		}
-	} else {
-		punt("The email '$email' is not in our database");
-	}	
-	
-}
-
-?>
-
 			<div class="jumbotron">
 				<div class="container-narrow">
 				  <br>
@@ -80,7 +20,62 @@ if (isset($_POST['submit'])) {
 				</div>
 			</div>
 			
+<?php
+// Back to PHP to perform the search if one has been submitted. Note
+// that $_POST['submit'] will be set only if you invoke this PHP code as
+// the result of a POST action, presumably from having pressed Submit
+// on the form we just displayed above.
 
+if (isset($_POST['submit'])) {
+	
+	// get data from the input fields
+	$email = $_POST['userEmail'];
+	$password = $_POST['userPassword'];
+	
+	// check to make sure we have an email
+	if (!$email) {
+		header("Location: login.php");
+	}
+	
+	if (!$password) {
+		header("Location: login.php");
+	}
+
+	// check if user is in the database
+	
+	// connect to database
+	$db = connectDB($DBHost,$DBUser,$DBPasswd,$DBName);
+	
+	// set up my query
+	$query = "SELECT UserEmail, UserPassword FROM Users_T WHERE UserEmail='$email';";
+	
+	// run the query
+	$result = queryDB($query, $db);
+	
+	
+	// check if the email is there
+	if (nTuples($result) > 0) {
+		$row = nextTuple($result);
+		
+		if ($row['UserPassword'] == crypt($password, $row['UserPassword'])) {
+			// Password is correct
+			if (session_start()) {
+				$_SESSION['userEmail'] = $email;
+				header('Location: dashboard.php');
+			} else {
+				punt("Unable to create session.");
+			}
+		} else {
+			// Password is not correct
+			punt('The password you entered is incorrect');
+		}
+	} else {
+		punt("The email '$email' is not in our database");
+	}	
+	
+}
+
+?>
             <div class="modal fade" id="elogin" role="dialog">
 					<div class="modal-dialog modal-lg modal-1">
 					
@@ -105,20 +100,22 @@ if (isset($_POST['submit'])) {
 								<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 								<div class="col-sm-6">
 									<div class="modal-header-2">
-										<h3><strong><font size=6 style="font-family:'Dancing Script'">Login to Wage Guard</font></strong></h3>
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h3><strong><font size=6 style="font-family:'Dancing Script'">Log in to Wage Guard</font></strong></h3>
 									</div>
 									<div class="modal-body">
 										
 											<!--<form role="form">-->
 											<div class="form-group">
-											  <input type="email" class="form-control" name="eemail" placeholder="Email Address">
+											  <input type="email" class="form-control" name="userEmail" placeholder="E-mail Address">
 											</div>
 											<div class="form-group">
-											  <input type="password" class="form-control" name="epassword" placeholder="Password">
+											  <input type="password" class="form-control" name="userPassword" placeholder="Password">
 											</div>
+											<!--
 											<div class="checkbox">
 											  <label><input type="checkbox" value="" checked>Remember me</label>
-											</div>
+											</div> -->
 											<div class="row" style="text-align: right; margin-right:40px;">
 											  <a href=#>Password help</a>	
 											</div>
