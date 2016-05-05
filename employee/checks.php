@@ -1,6 +1,10 @@
 <?php
 	include_once('header2.php');
 ?>
+
+        <link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+        
 		<div class="row">
 		<script>
 			$(document).ready(function() {
@@ -50,27 +54,27 @@
 									<font style="font-size: 17px; font-family:'Ubuntu'; color: black">Checks</font>
 								</div>
 								<div class="jumbotron" style="background-color: #e0ecf0; border-radius: 3px; width: 700px; height: auto; margin-top: 30px; text-align: left; padding: 35px">
-									
 									<br><p></p>
-                                    <!-- dorpdown menu for choosing paychecks-->
-                                    <div class="row" style="margin-left: 30px; font-family:'Raleway'; font-size: 25px; color: black; text-align: center">
-										<p style="float: left; margin-left: 8px">I want to report a wage theft case with </p>
-										<select style="float: left; margin-left: 30px; width: 180px; margin-right: 30px; background: transparent;
-										padding: 5px; font-size: 16px; border: 1px solid #ccc; height: 34px;">													
-											<option value ="select">Select Paycheck</option>
-											<option value ="3">Pacheck 3</option>
-											<option value ="2">Paycheck 2</option>
-										</select>
-									</div>
+                                    <!-- dorpdown menu for choosing paying hours-->
+                                    <p>Number of hours: <input type="text" name="checks" style="width: 200px" /> Hours</p>
+                                    <!-- Input payment amount-->
+                                    <p>Payment amount: <input type="text" name="checks" style="width: 200px" /> $</p>
+                                    
                                     <p></p>
-                                    <!-- Input box for user comments about the case-->
-									<p style="margin-left: 38px">Decription of the case: </p>
-									<textarea name='comment' id='comment' style="margin-left: 50px; width: 530px; height: 100px; border: 1px solid black" placeholder="Choose the date for your time entry">
-									</textarea><br />
-									<input type='hidden' name='articleid' id='articleid' value='<? echo $_GET["id"]; ?>' />
+                                
+                                    <p>Payment start date: <input type="text" id="startdate"></p>
+                                    
+                                    <p>Payment end date: <input type="text" id="enddate"></p>
+									<script type="text/javascript">
+										$(function() {
+												$("#startdate").datepicker({ dateFormat: "yy-mm-dd" }).val()
+												$("#enddate").datepicker({ dateFormat: "yy-mm-dd" }).val()
+										});
+								 
+									</script>
 									<div class="row" style="margin-top: 30px">
 										<a href="dashboard.php"><button type="button" class="btn btn-default" name="submit" style="font-family:'Raleway'; font-size:12px; margin-left: 470px"><strong>Back</strong></button></a>
-										<button class="btn btn-default" type="submit" style="font-family:'Raleway'; font-size:12px; margin-left: 10px"><strong>Report</strong></button>								
+										<button class="btn btn-default" type="submit" style="font-family:'Raleway'; font-size:12px; margin-left: 10px"><strong>Post</strong></button>								
 									</div>
 								</div>
 							</div>							
