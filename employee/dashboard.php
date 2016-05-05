@@ -35,20 +35,23 @@
 					<div class="row" style="margin-left: 30px; font-family:'Raleway'; font-size: 25px; color: black; text-align: center">
 						<div class="row">
 							<p style="float: left; margin-left: 80px">Company: </p>
-							<select style="float: left; margin-left: 30px; margin-top: 7px; width: 140px; margin-right: 30px">													
+							<select style="float: left; margin-left: 30px; width: 140px; margin-right: 30px; background: transparent;
+							padding: 5px; font-size: 16px; border: 1px solid #ccc; height: 34px;">														
 								<option value ="1">1:00am</option>
 								<option value ="2">2:00am</option>
 							</select>
-							<input type="text" class="form-control" name="company" style="width:320px; height: 30px; text-align: center"
+							<input type="text" class="form-control" name="company" style="width:320px; height: 35px; text-align: center"
 											   placeholder="Or input Company here">
 						</div>
+						<br>
 						<div class="row">
 							<p style="float: left; margin-left: 80px">Job Title: </p>
-							<select style="float: left; margin-left: 30px; margin-top: 7px; width: 140px; margin-right: 30px">													
+							<select style="float: left; margin-left: 30px; width: 140px; margin-right: 30px; background: transparent;
+							padding: 5px; font-size: 16px; border: 1px solid #ccc; height: 34px;">													
 								<option value ="1">1:00am</option>
 								<option value ="2">2:00am</option>
 							</select>
-							<input type="text" class="form-control" name="job" style="width:320px; height: 30px; text-align: center"
+							<input type="text" class="form-control" name="job" style="width:320px; height: 35px; text-align: center"
 											   placeholder="Or input Job here">
 						</div>
 						<br><button type="button" class="btn btn-default" name="submit" style="margin-left:600px; font-size:16px;"><strong>Plus One!</strong></button>
