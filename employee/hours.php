@@ -58,7 +58,12 @@
 								<div class="jumbotron" style="background-color: #e0ecf0; border-radius: 3px; width: 700px; height: auto; margin-top: 30px; text-align: center; padding-top: 25px">
 									
 									<br><p></p>
-									<input type="text" class="form-control" id="start" style="margin-left: 50px; width: 500px; height: 50px; text-align: center; font-size: large" placeholder="Choose the date for your time entry">
+									<input type="text" class="form-control" id="datepicker" style="margin-left: 50px; width: 500px; height: 50px; text-align: center; font-size: large" placeholder="Choose the date for your time entry">
+									<script type="text/javascript">
+										$(function() {
+												$("#datepicker").datepicker({ dateFormat: "yy-mm-dd" }).val()
+										});
+									</script>
                                         <span class="input-group-btn" style="text-align: center">
 											<button id="button1" class="btn btn-default" type="button" onclick="viewme(1)" style="margin-top: 30px; width: 300px">Record Times</button>
 											<button id="button2" class="btn btn-default" type="button" onclick="viewme(2)" style="margin-top: 30px; width: 300px">Record Hours</button>
