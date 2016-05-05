@@ -21,37 +21,29 @@
                             </div>
                         </div>
                         <div class="col-sm-9">
-                            <div class="jumbotron" style="background-color: #e0ecf0; border-radius: 3px; width: 730px; min-height: 500px; margin-left: 30px; margin-top: 10px">
-								<a href="dashboard.php"><button type="button" class="btn btn-default" name="submit" style="font-family:'Raleway'; font-size:12px; margin:0; margin-right:600px"><strong>Back</strong></button></a>
-								<br><p></p>
-									<table style="margin-top: 50px">
-										<td><label for="userid">Please Enter User ID:</label></td> 
-										<td><input type="text" class="form-control" name="userid" size=20 maxsize=128 style="margin-left: 50px"/></td>
-										<td><button type="submit" class="btn btn-default" name="submit" style="margin-left: 130px"><strong>submit</strong></button></td>
-									</table>									
-									
-									<table class="table table-striped sortable" style="font-family:'Raleway'; font-weight: 400; margin-top: 50px">
-                                        <thead>
-                                            <tr>
-                                                <th>Pycheck ID</th>
-                                                <th>Hours</th>
-                                                <th>Payment Amount</th>                                           
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                           <tr>
-                                              <td>134</td>
-                                              <td>68</td>
-                                              <td>$1360</td>
-                                           </tr>
-                                           <tr>
-                                              <td>xxx</td>
-                                              <td>xxx</td>
-                                              <td>xxx</td>
-                                           </tr>
-                                        </tbody>
-                                    </table>
-							</div>
+                            <div class="jumbotron" style="background-color: #dfd3d7; border-radius: 3px; width: 730px; min-height: 500px; margin-left: 30px; margin-top: 10px">
+                                    
+                                    <div class="alert alert-danger" role="alert" style="margin-top: 50px">
+										<a href="#" class="alert-link">
+											<font style="font-size: 25px; font-family:'Raleway'; color: #a95050"><strong>Something here</strong></font>
+										</a>
+									</div>
+									<div class="alert alert-success" role="alert" style="margin-top: 50px">
+										<a href="#" class="alert-link">
+											<font style="font-size: 25px; font-family:'Raleway'; color: #459a46"><strong>Something here</strong></font>
+										</a>
+									</div>
+									<div class="alert alert-info" role="alert" style="margin-top: 50px">
+										<a href="#" class="alert-link">
+											<font style="font-size: 25px; font-family:'Raleway'; color: #42a0e7"><strong>Something here</strong></font>
+										</a>
+									</div>
+									<div class="alert alert-warning" role="alert" style="margin-top: 50px">
+										<a href="#" class="alert-link">
+											<font style="font-size: 25px; font-family:'Raleway'; color: #a4a553"><strong>Something here</strong></font>
+										</a>
+									</div>
+                            </div>
                         </div>
 					</div>
 				</div>
