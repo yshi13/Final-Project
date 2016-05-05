@@ -52,19 +52,16 @@
 									<!-- begin form -->
 									<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 									
-									<input type="text" class="form-control" id="datepicker" style="margin-left: 50px; width: 500px; height: 50px; text-align: center; font-size: large" placeholder="Choose the date for your time entry" name="entryDate">
+									<input type="text" class="form-control" id="datepicker" style="margin-left: 50px; width: 500px; height: 50px; text-align: center; font-size: large" placeholder="Choose the date for your time entry">
 									<script type="text/javascript">
 										$(function() {
 												$("#datepicker").datepicker({ dateFormat: "yy-mm-dd" }).val()
 										});
 									</script>
-									
                                         <span class="input-group-btn" style="text-align: center">
 											<button id="button1" class="btn btn-default" type="button" onclick="viewme(1)" style="margin-top: 30px; width: 300px">Record Times</button>
-											
 											<button id="button2" class="btn btn-default" type="button" onclick="viewme(2)" style="margin-top: 30px; width: 300px">Record Hours</button>
-											
-											<br><div id="content1" style="float:left; display:block; margin-top: 20px; text-align: center">
+											<br><div id="content1" style="float:left; display:block; margin-top: 40px; text-align: center">
 												<p style="float: left">Start time:</p>
 												<select style="float: left; margin-left: 30px; margin-top: 7px; width: 140px">													
 													<option value ="1">1:00am</option>
@@ -83,14 +80,13 @@
 											
 											<div id="content2" style="display: none; margin-left: 200px; margin-top: 30px">
 												<div class="input-group spinner" data-trigger="spinner" id="spinner"> 
-													<input type="text" class="form-control" value="1" data-max="100" data-min="0.5" data-step="1" name="numHours"> 
+													<input type="text" class="form-control" value="1" data-max="100" data-min="0.5" data-step="1"> 
 													<div class="input-group-addon"> 
 														<a href="javascript：;" class="spin-up" data-spin="up"><i class="icon-sort-up"></i></a> 
 														<a href="javascript：;" class="spin-down" data-spin="down"><i class="icon-sort-down"></i></a> 
 													</div> 
 												</div>
 											</div>
-											
 											<script type="text/javascript">
 											var temp=1;
 											function viewme(id)
@@ -102,12 +98,11 @@
 											temp=id;
 											}
 											</script>
-											
-                                        <!-- A modal here for editing info-->
+                                          <!-- A modal here for editing info-->
                                         </span>
-										<div class="row" style="margin-top: 30px">
+										<div class="row" style="margin-top: 30px; margin-left: 300px">
 										<a href="dashboard.php"><button type="button" class="btn btn-default" name="submit" style="font-family:'Raleway'; font-size:12px; margin:0"><strong>Cancel</strong></button></a>
-										<button class="btn btn-default" type="submit" style="font-family:'Raleway'; font-size:12px"><strong>Save Changes</strong></button>
+										<button class="btn btn-default" type="submit" style="font-family:'Raleway'; font-size:12px"><strong>Save Changes</strong></button>								
 										</div>
 										</form>
 								
