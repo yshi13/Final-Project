@@ -57,7 +57,7 @@
 									
 									<br><p></p>
 									<input type="text" class="form-control" id="start" style="margin-left: 50px; width: 500px; height: 50px; text-align: center; font-size: large" placeholder="Choose the date for your time entry">
-                                        <span class="input-group-btn" style="text-align: center">
+                                        						<span class="input-group-btn" style="text-align: center">
 											<button id="button1" class="btn btn-default" type="button" onclick="viewme(1)" style="margin-top: 30px; width: 300px">Record Times</button>
 											<button id="button2" class="btn btn-default" type="button" onclick="viewme(2)" style="margin-top: 30px; width: 300px">Record Hours</button>
 											<br><div id="content1" style="float:left; display:block; margin-top: 20px; text-align: center">
