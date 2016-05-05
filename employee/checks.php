@@ -64,9 +64,16 @@
                                     
                                     <p></p>
                                 
-                                    <p>Payment start date: <input type="text" id="start"></p>
+                                    <p>Payment start date: <input type="text" id="startdate"></p>
                                     
-                                    <p>Payment end date: <input type="text" id="end"></p>
+                                    <p>Payment end date: <input type="text" id="enddate"></p>
+									<script type="text/javascript">
+										$(function() {
+												$("#startdate").datepicker({ dateFormat: "yy-mm-dd" }).val()
+												$("#enddate").datepicker({ dateFormat: "yy-mm-dd" }).val()
+										});
+								 
+									</script>
 									<div class="row" style="margin-top: 30px">
 										<a href="dashboard.php"><button type="button" class="btn btn-default" name="submit" style="font-family:'Raleway'; font-size:12px; margin-left: 470px"><strong>Back</strong></button></a>
 										<button class="btn btn-default" type="submit" style="font-family:'Raleway'; font-size:12px; margin-left: 10px"><strong>Post</strong></button>								
