@@ -54,6 +54,12 @@
 							<input type="text" class="form-control" name="job" style="width:320px; height: 35px; text-align: center"
 											   placeholder="Or input Job here">
 						</div>
+						<br>
+						<div class="row">
+							<p style="float: left; margin-left: 80px">Hourly rate: </p>
+							<input type="text" class="form-control" name="job" style="margin-left: 30px; float: left; width:320px; height: 35px; text-align: center"
+											   placeholder="Enter hourly wage rate"><p style="margin-right: 200px">$/hour</p>
+						</div>
 						<br><button type="button" class="btn btn-default" name="submit" style="margin-left:600px; font-size:16px;"><strong>Plus One!</strong></button>
 					</div>
 				</div>
