@@ -1,21 +1,16 @@
 <?php
 // check if user logged in, if not, kick them to login.php
 	session_start();
-	if(!isset($_SESSION['userEmail'])) {
+	if(!isset($_SESSION['eemail'])) {
 		// if this is not set, it means they are not logged in
 		header("Location: Welcome.php");
 	}
 
+?>
+
+<?php
 	include_once "config.php";
 	include_once "utils.php";
-	
-	// determine ID of current user, based on session email
-	$db = connectDB($DBHost,$DBUser,$DBPasswd,$DBName);
-	$userEmail = $_SESSION['userEmail'];
-	$userID = nextTuple(queryDB("SELECT UserID FROM Users_T WHERE UserEmail='$userEmail'", $db))['UserID'];
-	
-	// determine first name of current user for greeting in header
-	$userFirstName = nextTuple(queryDB("SELECT UserFirstName FROM Users_T WHERE UserID=$userID", $db))['UserFirstName'];
 ?>
 	
 <html>
@@ -24,11 +19,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Handmade CSS -->
         <link href="style2.css" rel="stylesheet" type="text/css">
+		<link href="tables.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="sorttable.js"></script>
+		<script type='text/javascript' src="datepicker.js"></script>
 		
 		<link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
@@ -41,7 +38,7 @@
 			<div class="col-sm-10 col-xs-12 menu" width=100%>
 				<br>
 				<a href="dashboard.php" style="margin-left: 80px; margin-right: 30px"><img alt="avatar" src="avatar.png" width=60 height=60></a>
-				<font size=2 style="font-family:'Raleway'; color: #6c6c76"><strong>Hello, <?php echo $userFirstName ?>!</strong></font>
+				<font size=2 style="font-family:'Raleway'; color: #6c6c76"><strong>Hello Joe!</strong></font>
 				<a href="logout.php" style="margin-left: 50px"><font size=4 style="font-family:'Raleway'; color: #6c6c76"><strong>Logout </strong></font></a>
 				<a href="#" style="margin-left: 30px"><font size=4 style="font-family:'Raleway'; color: #6c6c76"><strong>Notification </strong></font></a>
 				<span class="glyphicon glyphicon-envelope"></span>

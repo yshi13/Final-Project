@@ -1,7 +1,8 @@
 <?php
 	include_once('header1.php');
 ?>
-			
+		<link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>	
 
 		<div class="container">	
 			<title>
@@ -12,27 +13,6 @@
 			<h1><font size=6 style="font-family:'Ubuntu'; color: white">Create an account - Employee</font></h1>
 			<br>
 			&nbsp;
-			
-			<!--
-			<div class='modal fade' id='myModal'>
-				<div class='modal-dialog modal-lg' style='padding-top: 240px'>
-					<div class='modal-content' style='text-align: center; border-radius: 2px'>
-						<div class='modal-body'>
-							<br><font size=5 style="font-family:'Ubuntu'; color: #6c6c76; margin-top:400px"><strong><?php echo "The user " . $email . " was added to the database"; ?></strong></font>
-						</div>
-						<br><br>
-						<a href='login.php'><button type='button' class='btn btn-default' style="margin-right: 20px; margin-bottom:30px; border: 1px solid black; color: black;
-						border-radius: 0; font-size: 21px; padding: 4px 8px"><strong>LOG IN</strong></button></a>
-						<a href='esignup.php'><button type='button' class='btn btn-default' style="margin-left: 20px; margin-bottom:30px; border: 1px solid black; color: black;
-						border-radius: 0; font-size: 21px; padding: 4px 8px"><strong>SIGN UP</strong></button></a>
-						<script>
-						$('#myModal').modal({backdrop: 'static', keyboard: false});
-						</script>
-					</div>
-				</div>
-			</div>
-			-->
-			
 			
 <?php
 // Back to PHP to perform the search if one has been submitted. Note
@@ -101,10 +81,10 @@ if (isset($_POST['submit'])) {
 	
 	// tell users that we added the player to the database
 	echo "<div class='modal fade' id='myModal'>\n";
-	echo "<div class='modal-dialog modal-lg' style='padding-top: 240px'>\n";
+	echo "<div class='modal-dialog modal-lg'>\n";
 	echo "<div class='modal-content' style='text-align: center; border-radius: 2px'>\n";
     echo "<div class='modal-body'>\n";
-	echo "\t<br><font size=5 style='font-family:'Ubuntu'; color: #6c6c76; margin-top:400px;'><strong>The user " . $email . " was added to the database</strong></font></div><br><br>\n";
+	echo "\t<br><font size=5 style='font: Ubuntu; color: #6c6c76;'><strong>The user " . $email . " was added to the database</strong></font></div><br><br>\n";
 	echo "<a href='login.php'><button type='button' class='btn btn-default' style='margin-right: 20px; margin-bottom:30px; border: 1px solid black; color: black;
 							border-radius: 0; font-size: 21px; padding: 4px 8px'><strong>LOG IN</strong></button></a>
 							<a href='esignup.php'><button type='button' class='btn btn-default' style='margin-left: 20px; margin-bottom:30px; border: 1px solid black; color: black;
@@ -162,20 +142,9 @@ if (isset($_POST['submit'])) {
 								</div>
 							
 								<div class="form-group">
-									<div class='input-group date' id='datetimepicker1'>
-										<label for="date">Date of Birth
-										<input type='text' class="form-control" size=20 maxsize=128 />
-										<span class="input-group-addon">
-											<span class="glyphicon glyphicon-calendar"></span>
-										</span>
-										</label>
-									</div>
+									<label for="bdate">Birthdate
+									<input type="text" class="form-control" id="start"></label>
 								</div>
-								<script type="text/javascript">
-									$(function () {
-										$('#datetimepicker1').datetimepicker();
-									});
-								</script>
 							
 								<div class="form-group">
 									<label for="phone">Phone <font style="color: red">*</font>
@@ -198,10 +167,10 @@ if (isset($_POST['submit'])) {
 					</div>
 					<br>
 					&nbsp;
-					<div class="row" style="font-family:'Raleway'; color: black; text-align: center">
-						
-						<div class="dropdown">
-							<font size=4><strong>Company :</strong></font>
+					<div class="row" style="font-family:'Raleway'; color: black; text-align: left">
+
+						<div class="dropdown" style="float:left">
+							<font size=4 style="margin-left: 170px"><strong>Company :</strong></font>
 							<button class="btn btn-default dropdown-toggle" type="button"
 							id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
 							style="margin: 10px 10px">
@@ -214,7 +183,8 @@ if (isset($_POST['submit'])) {
 							  <li><a href="#">Company 3</a></li>
 							  <li><a href="#">Company 4</a></li>
 							</ul>
-							
+						</div>
+						<div class="dropdown" style="float:left">	
 							<font size=4 style="margin-left: 170px"><strong>Job Title :</strong></font>
 							<button class="btn btn-default dropdown-toggle" type="button"
 							id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false"
@@ -222,7 +192,7 @@ if (isset($_POST['submit'])) {
 								<strong>Select Job Title</strong>
 								<span class="caret"></span>
 							</button>
-							<ul class="dropdown-menu" aria-labelledby="dropdownMenu2" style="margin-left: 780px">
+							<ul class="dropdown-menu" aria-labelledby="dropdownMenu2" style="margin-left: 330px">
 							  <li><a href="#">Job 1</a></li>
 							  <li><a href="#">Job 2</a></li>
 							  <li><a href="#">Job 3</a></li>
@@ -240,6 +210,7 @@ if (isset($_POST['submit'])) {
 					<br>
 					&nbsp;
 				</div>
+		
 				<div class="jumbotron" style="background-color: #dcece1; border-radius: 2px; text-align: left; height: 350px">
 					<div class="row-1">
 						<br>

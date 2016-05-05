@@ -22,7 +22,7 @@
 				<?php include_once('generateDashboardContent.php'); ?>
 				
 		<!-- Modal for adding jobs-->
-		<!--<div class="modal fade" id="elogin" role="dialog">
+		<div class="modal fade" id="elogin" role="dialog">
 			<div class="modal-dialog modal-lg" style='padding-top: 120px'>							
 				<div class="modal-content" style="border-radius: 2px; padding-bottom: 50px">
 					<div class="row" style="margin-left: 50px; font-family:'Raleway'; color: black">
@@ -65,7 +65,7 @@
 					</div>
 				</div>
 			</div>
-		</div>-->
+		</div>
 		
 		<br>
 		&nbsp;
