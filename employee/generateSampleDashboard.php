@@ -37,11 +37,12 @@
 			
 	// HTML: generate sample content
 	echo "\t\t\t\t\t<div class='jumbotron' style='background-color: #dfd3d7; border-radius: 3px; width: 700px; height: 440px; margin-top: 30px; text-align: center'>\n";
-	echo "\t\t\t\t\t\t<div class='alert alert-danger' role='alert'>\n";
+	
 					
 	// HTML: sample alert
+	echo "\t\t\t\t\t\t<div class='alert alert-danger' role='alert'>\n";
 	echo "\t\t\t\t\t\t\t<a href='#' class='alert-link'>\n";
-	echo "\t\t\t\t\t\t\t\t<font style='font-size: 25px; font-family:Raleway; color: #a95050'><strong>SAMPLE: You have 2 wage theft alerts.</strong></font>\n";
+	echo "\t\t\t\t\t\t\t\t<font style='font-size: 25px; font-family:Raleway; color: #a95050'><strong>This is a preview of the dashboard. <br>Please add a job to access more tools.</strong></font>\n";
 	echo "\t\t\t\t\t\t\t</a>\n";
 	echo "\t\t\t\t\t\t</div>\n";
 					
