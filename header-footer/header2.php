@@ -30,6 +30,7 @@
 	//echo "jobAssignmentID check value: " . $jobAssignmentIDCheckValue;
 	
 	//echo "http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
+	
 	if ($_SERVER['PHP_SELF'] == "/~jlin4/WageGuard/dashboard.php"){
 		goto skipChecks;
 	};
@@ -43,7 +44,7 @@
 	};
 	
 	skipChecks: echo "";
-		
+	
 ?>
 	
 <html>
