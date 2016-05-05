@@ -14,17 +14,17 @@ if (isset($_POST['submit'])) {
 //	print_r($_POST);
 
 	// get data from the input fields
-	$email = $_POST['eemail'];
-	$password = $_POST['epassword'];
+	$email = $_POST['userEmail'];
+	$password = $_POST['userPassword'];
 	
 	
 	// check to make sure we have an email
 	if (!$email) {
-		header("Location: login.php");
+		header("Location: Welcome.php");
 	}
 	
 	if (!$password) {
-		header("Location: login.php");
+		header("Location: Welcome.php");
 	}
 
 	// check if user is in the database
@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
 	$db = connectDB($DBHost,$DBUser,$DBPasswd,$DBName);
 	
 	// set up my query
-	$query = "SELECT email, hashedPass FROM Users WHERE email='$email';";
+	$query = "SELECT UserEmail, UserPassword FROM Users_T WHERE UserEmail='$email';";
 	
 	// run the query
 	$result = queryDB($query, $db);
@@ -42,10 +42,10 @@ if (isset($_POST['submit'])) {
 	if (nTuples($result) > 0) {
 		$row = nextTuple($result);
 		
-		if ($row['hashedPass'] == crypt($password, $row['hashedPass'])) {
+		if ($row['UserPassword'] == crypt($password, $row['UserPassword'])) {
 			// Password is correct
 			if (session_start()) {
-				$_SESSION['eemail'] = $email;
+				$_SESSION['userEmail'] = $email;
 				header('Location: dashboard.php');
 			} else {
 				punt("Unable to create session");
@@ -105,16 +105,17 @@ if (isset($_POST['submit'])) {
 								<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 								<div class="col-sm-6">
 									<div class="modal-header-2">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
 										<h3><strong><font size=6 style="font-family:'Dancing Script'">Login to Wage Guard</font></strong></h3>
 									</div>
 									<div class="modal-body">
 										
 											<!--<form role="form">-->
 											<div class="form-group">
-											  <input type="email" class="form-control" name="eemail" placeholder="Email Address">
+											  <input type="email" class="form-control" name="userEmail" placeholder="Email Address">
 											</div>
 											<div class="form-group">
-											  <input type="password" class="form-control" name="epassword" placeholder="Password">
+											  <input type="password" class="form-control" name="userPassword" placeholder="Password">
 											</div>
 											<div class="checkbox">
 											  <label><input type="checkbox" value="" checked>Remember me</label>
