@@ -24,7 +24,7 @@
 			
 		<!-- Modal for adding jobs-->
 		
-		<!--<div class="modal fade" id="elogin" role="dialog">
+		<div class="modal fade" id="elogin" role="dialog">
 			<div class="modal-dialog modal-lg" style='padding-top: 120px'>							
 				<div class="modal-content" style="border-radius: 2px; padding-bottom: 50px">
 					<div class="row" style="margin-left: 50px; font-family:'Raleway'; color: black">
@@ -32,42 +32,30 @@
 						<h1><strong>Add Job</strong></h1>
 						<br>
 					</div>
-					<div class="row" style="margin-left: 30px; font-family:'Raleway'; color: black; text-align: center">
-						<div class="dropup">
-							<font size=4><strong>Company :</strong></font>
-							<button class="btn btn-default dropdown-toggle" type="button"
-							id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
-							style="margin: 10px 10px; margin-right: 350px">
-								<strong>Select company</strong>
-								<span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="margin-left: 200px">
-							  <li><a href="#">Company 1</a></li>
-							  <li><a href="#">Company 2</a></li>
-							  <li><a href="#">Company 3</a></li>
-							  <li><a href="#">Company 4</a></li>
-							</ul>
+					<div class="row" style="margin-left: 30px; font-family:'Raleway'; font-size: 25px; color: black; text-align: center">
+						<div class="row">
+							<p style="float: left; margin-left: 80px">Company: </p>
+							<select style="float: left; margin-left: 30px; margin-top: 7px; width: 140px; margin-right: 30px">													
+								<option value ="1">1:00am</option>
+								<option value ="2">2:00am</option>
+							</select>
+							<input type="text" class="form-control" name="company" style="width:320px; height: 30px; text-align: center"
+											   placeholder="Or input Company here">
 						</div>
-						<div class="dropdown">
-							<font size=4 style="margin-left: 100px"><strong>Job Title :</strong></font>
-							<button class="btn btn-default dropdown-toggle" type="button"
-							id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
-							style="margin: 10px 10px">
-								<strong>Select Job Title</strong>
-								<span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="margin-left: 500px">
-							  <li><a href="#">Job 1</a></li>
-							  <li><a href="#">Job 2</a></li>
-							  <li><a href="#">Job 3</a></li>
-							  <li><a href="#">Job 4</a></li>
-							</ul>
+						<div class="row">
+							<p style="float: left; margin-left: 80px">Job Title: </p>
+							<select style="float: left; margin-left: 30px; margin-top: 7px; width: 140px; margin-right: 30px">													
+								<option value ="1">1:00am</option>
+								<option value ="2">2:00am</option>
+							</select>
+							<input type="text" class="form-control" name="job" style="width:320px; height: 30px; text-align: center"
+											   placeholder="Or input Job here">
 						</div>
 						<br><button type="button" class="btn btn-default" name="submit" style="margin-left:600px; font-size:16px;"><strong>Plus One!</strong></button>
 					</div>
 				</div>
 			</div>
-		</div>-->
+		</div>
 		
 		<br>
 		&nbsp;
