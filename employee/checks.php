@@ -54,9 +54,8 @@
 									<font style="font-size: 17px; font-family:'Ubuntu'; color: black">Checks</font>
 								</div>
 								<div class="jumbotron" style="background-color: #e0ecf0; border-radius: 3px; width: 700px; height: auto; margin-top: 30px; text-align: left; padding: 35px">
-									<a href="dashboard.php"><button type="button" class="btn btn-default" name="submit" style="font-family:'Raleway'; font-size:12px; margin:0; margin-right:600px"><strong>Back</strong></button></a>
 									<br><p></p>
-                                    <!-- Input number of hours-->
+                                    <!-- dorpdown menu for choosing paying hours-->
                                     <label for="checks"><font size=4 style="margin-left: 10px"><strong>Number of hours: </strong></font>
                                     <input type="text" class="form-control" name="checks" size=20 maxsize=128 /></label>
                                     <!-- Input payment amount-->
@@ -68,7 +67,10 @@
                                     <p>Payment start date: <input type="text" id="start"></p>
                                     
                                     <p>Payment end date: <input type="text" id="end"></p>
-                                
+									<div class="row" style="margin-top: 30px">
+										<a href="dashboard.php"><button type="button" class="btn btn-default" name="submit" style="font-family:'Raleway'; font-size:12px; margin-left: 470px"><strong>Back</strong></button></a>
+										<button class="btn btn-default" type="submit" style="font-family:'Raleway'; font-size:12px; margin-left: 10px"><strong>Post</strong></button>								
+									</div>
 								</div>
 							</div>							
 						</div>
